@@ -8,47 +8,76 @@ const LandingPage = () => {
     <div className="landing-page">
       {/* ========== Section 1: Hero Page ========== */}
       <section id="hero" className="section-hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Your tagline or intro here.</p>
+        <h1>Hiraya Manawari</h1>
+        <p>want an application that is both captivating and creative?</p>
+
+        <div className="hero-buttons">
+          <button className="btn-primary">Download Resume</button>
+          <button className="btn-secondary">Contact Me</button>
+        </div>
       </section>
 
       {/* ========== Section 2: About Me ========== */}
       <section id="about" className="section-about">
-        <h2>About Me</h2>
-        <p>Brief description or bio goes here.</p>
+        <h2>about me.</h2>
+        <p>
+          hello, I’m Francine Dalida, you can call me Cine for short! Currently
+          a sophomore Computer Science student at De La Salle University -
+          Dasmariñas
+        </p>
+        <p>
+          almost a full-stack developer, an artist wannabe, and a reader by
+          choice.
+        </p>
       </section>
 
       {/* ========== Section 3: Tech ========== */}
       <section id="tech" className="section-tech">
-        <h2>Tech Stack</h2>
-        <ul>
-          <li>React</li>
-          <li>JavaScript</li>
-          <li>HTML/CSS</li>
-          {/* Add more as needed */}
-        </ul>
+        <h2>tech.</h2>
+        // Tech Stack Section
+        <div id="tech-stack">
+          {/* Front-End Category */}
+          <div id="frontend-stack" className="tech-category">
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+          </div>
+          {/* Back-End Category */}
+          <div id="backend-stack" className="tech-category">
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+          </div>
+          {/* Other Tools Category */}
+          <div id="other-tools-stack" className="tech-category">
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+            <div className="tech-item"></div>
+          </div>
+        </div>
       </section>
 
       {/* ========== Section 4: Projects ========== */}
       <section id="projects" className="section-projects">
-        <h2>Projects</h2>
+        <h2>projects.</h2>
+        <div className="project-wrapper">
+          {/* ========== Project: Application Development ========== */}
+          <div className="project-section" id="app-dev">
+            <h3>Application Development</h3>
+            {/* La Spot, Hollow Knight Gane Gallery, Product Landing Page*/}
+          </div>
 
-        {/* ========== Project: Application Development ========== */}
-        <div className="project-section" id="app-dev">
-          <h3>Application Development</h3>
-          {/* Add cards, images, links, etc. */}
-        </div>
+          {/* ========== Project: Prototypes ========== */}
+          <div className="project-section" id="prototypes">
+            <h3>Prototypes</h3>
+            {/* Prototypes: Lauviah, Apo kalinga, Cha-Ching */}
+          </div>
 
-        {/* ========== Project: Prototypes ========== */}
-        <div className="project-section" id="prototypes">
-          <h3>Prototypes</h3>
-          {/* Add design screenshots, Figma links, etc. */}
-        </div>
-
-        {/* ========== Project: Arts and Posters ========== */}
-        <div className="project-section" id="arts-posters">
-          <h3>Arts & Posters</h3>
-          {/* Add gallery, illustrations, etc. */}
+          {/* ========== Project: Arts and Posters ========== */}
+          <div className="project-section" id="arts-posters">
+            <h3>Arts & Posters</h3>
+            {/* Art portfolio, Artworks */}
+          </div>
         </div>
       </section>
     </div>
