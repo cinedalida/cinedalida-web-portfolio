@@ -114,14 +114,35 @@ section {
   margin-bottom: 20px;
 }
 
-/* Bootstrap-style card suggestion for project cards */
-.project-section .card {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+/* Bootstrap-style */
+
+/* Project Section - Responsive Grid */
+.project-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
+/* Individual Card Styling */
+.project-section .card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  border: none;
+}
+
+/* Hover Effect */
+.project-section .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Image */
 .project-section .card img {
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: 0.375rem; /* Bootstrap border-radius-md */
+  border-top-right-radius: 0.375rem;
 }
