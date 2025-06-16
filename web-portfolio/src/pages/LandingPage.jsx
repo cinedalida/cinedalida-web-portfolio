@@ -1,7 +1,6 @@
 import React from "react";
 
-// Import any styling or assets here
-// import './LandingPage.css';
+import "../css/landingPage.css";
 
 const LandingPage = () => {
   return (
@@ -64,19 +63,19 @@ const LandingPage = () => {
           {/* ========== Project: Application Development ========== */}
           <div className="project-section" id="app-dev">
             <h3>Application Development</h3>
-            {/* La Spot, Hollow Knight Gane Gallery, Product Landing Page*/}
+            {/* Long cards: La Spot, Hollow Knight Gane Gallery, Product Landing Page*/}
           </div>
 
           {/* ========== Project: Prototypes ========== */}
           <div className="project-section" id="prototypes">
             <h3>Prototypes</h3>
-            {/* Prototypes: Lauviah, Apo kalinga, Cha-Ching */}
+            {/* Short cards: Prototypes: Lauviah, Apo kalinga, Cha-Ching */}
           </div>
 
           {/* ========== Project: Arts and Posters ========== */}
           <div className="project-section" id="arts-posters">
             <h3>Arts & Posters</h3>
-            {/* Art portfolio, Artworks */}
+            {/* Short cards: Art portfolio, Artworks */}
           </div>
         </div>
       </section>
