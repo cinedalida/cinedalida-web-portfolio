@@ -28,6 +28,41 @@ const LandingPage = () => {
           almost a full-stack developer, an artist wannabe, and a reader by
           choice.
         </p>
+
+        <div className="contact-icons">
+          {/* Facebook Icon */}
+          <a
+            href="https://facebook.com/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/path/to/facebook-icon.png"
+              alt="Facebook"
+              className="icon"
+            />
+          </a>
+          {/* LinkedIn Icon */}
+          <a
+            href="https://linkedin.com/in/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/path/to/linkedin-icon.png"
+              alt="LinkedIn"
+              className="icon"
+            />
+          </a>
+          {/* GitHub Icon */}
+          <a
+            href="https://github.com/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/path/to/github-icon.png" alt="GitHub" className="icon" />
+          </a>
+        </div>
       </section>
 
       {/* ========== Section 3: Tech ========== */}
@@ -117,7 +152,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* ========== Project: Prototypes 3 ========== */}
+          {/* ========== Project: Prototypes ========== */}
           <div className="project-section mb-5" id="prototypes">
             <h3>Prototypes</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
