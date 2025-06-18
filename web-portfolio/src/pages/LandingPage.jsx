@@ -117,7 +117,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* ========== Project: Prototypes ========== */}
+          {/* ========== Project: Prototypes 3 ========== */}
           <div className="project-section mb-5" id="prototypes">
             <h3>Prototypes</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
