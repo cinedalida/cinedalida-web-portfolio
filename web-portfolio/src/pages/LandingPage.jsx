@@ -32,7 +32,7 @@ const LandingPage = () => {
         <div className="contact-icons">
           {/* Facebook Icon */}
           <a
-            href="https://facebook.com/your-profile"
+            href="https://www.facebook.com/ysabel.dalida.15"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -44,7 +44,7 @@ const LandingPage = () => {
           </a>
           {/* LinkedIn Icon */}
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/cinedalida/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -56,7 +56,7 @@ const LandingPage = () => {
           </a>
           {/* GitHub Icon */}
           <a
-            href="https://github.com/your-profile"
+            href="https://github.com/cinedalida"
             target="_blank"
             rel="noopener noreferrer"
           >
