@@ -17,6 +17,8 @@ const LandingPage = () => {
       </section>
 
       {/* ========== Section 2: About Me ========== */}
+      {/* note: make min width width - maxwidth*/}
+      {/* so could be almost black lahat*/}
       <section id="about" className="section-about">
         <h2>about me.</h2>
         <p>
