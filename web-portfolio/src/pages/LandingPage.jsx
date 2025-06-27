@@ -2,11 +2,15 @@ import React from "react";
 
 import "../css/landingPage.css";
 
+const styles = {
+  section_hero: `h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center`,
+};
+
 const LandingPage = () => {
   return (
     <div className="landing-page">
       {/* ========== Section 1: Hero Page ========== */}
-      <section id="hero" className="section-hero">
+      <section id="hero" className={styles.section_hero}>
         <h1>Hiraya Manawari</h1>
         <p>want an application that is both captivating and creative?</p>
 
