@@ -3,7 +3,12 @@ import React from "react";
 import "../css/landingPage.css";
 
 const styles = {
-  section_hero: `h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center`,
+  // Hero Section Styles
+  section_hero: `h-screen flex flex-col items-center justify-center bg-[#03030B] text-white text-center 0 -20px 30px -10px rgba(255, 255, 255, 0.5)`,
+  title: `text-5xl font-bold mb-4`,
+  subtitle: `text-xl mb-8`,
+  hero_buttons: `flex space-x-4 mt-6`,
+  btn_hero: `bg-[#4880C9] text-white px-4 py-3 rounded-3xl hover:shadow-[0_0_20px_5px_rgba(72,128,201,0.8)] transition duration-300`,
 };
 
 const LandingPage = () => {
@@ -11,12 +16,14 @@ const LandingPage = () => {
     <div className="landing-page">
       {/* ========== Section 1: Hero Page ========== */}
       <section id="hero" className={styles.section_hero}>
-        <h1>Hiraya Manawari</h1>
-        <p>want an application that is both captivating and creative?</p>
+        <h1 className={styles.title}>Hiraya Manawari</h1>
+        <p className={styles.subtitle}>
+          want an application that is both captivating and creative?
+        </p>
 
-        <div className="hero-buttons">
-          <button className="btn-primary">Download Resume</button>
-          <button className="btn-secondary">Contact Me</button>
+        <div className={styles.hero_buttons}>
+          <button className={styles.btn_hero}>Download Resume</button>
+          <button className={styles.btn_hero}>Contact Me</button>
         </div>
       </section>
 
