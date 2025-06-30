@@ -9,6 +9,11 @@ const styles = {
   subtitle: `text-xl mb-8`,
   hero_buttons: `flex space-x-4 mt-6`,
   btn_hero: `bg-[#4880C9] text-white px-4 py-3 rounded-3xl hover:shadow-[0_0_20px_5px_rgba(72,128,201,0.8)] transition duration-300`,
+
+  // about me
+  section_about: `py-20 px-10 bg-[#03030B] text-center`,
+  section_title: `text-3xl mb-6`,
+  about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-lg shadow-lg`,
 };
 
 const LandingPage = () => {
@@ -28,53 +33,57 @@ const LandingPage = () => {
       </section>
 
       {/* ========== Section 2: About Me ========== */}
-      {/* note: make min width width - maxwidth*/}
-      {/* so could be almost black lahat*/}
-      <section id="about" className="section-about">
-        <h2>about me.</h2>
-        <p>
-          hello, I’m Francine Dalida, you can call me Cine for short! Currently
-          a sophomore Computer Science student at De La Salle University -
-          Dasmariñas
-        </p>
-        <p>
-          almost a full-stack developer, an artist wannabe, and a reader by
-          choice.
-        </p>
+      <section id="about" className={styles.section_about}>
+        <div className={styles.about_container}>
+          <h2 className={styles.section_title}>about me.</h2>
+          <p>
+            hello, I’m Francine Dalida, you can call me Cine for short!
+            Currently a sophomore Computer Science student at De La Salle
+            University - Dasmariñas
+          </p>
+          <p>
+            almost a full-stack developer, an artist wannabe, and a reader by
+            choice.
+          </p>
 
-        <div className="contact-icons">
-          {/* Facebook Icon */}
-          <a
-            href="https://www.facebook.com/ysabel.dalida.15"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/path/to/facebook-icon.png"
-              alt="Facebook"
-              className="icon"
-            />
-          </a>
-          {/* LinkedIn Icon */}
-          <a
-            href="https://www.linkedin.com/in/cinedalida/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/path/to/linkedin-icon.png"
-              alt="LinkedIn"
-              className="icon"
-            />
-          </a>
-          {/* GitHub Icon */}
-          <a
-            href="https://github.com/cinedalida"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/path/to/github-icon.png" alt="GitHub" className="icon" />
-          </a>
+          <div className="contact-icons">
+            {/* Facebook Icon */}
+            <a
+              href="https://www.facebook.com/ysabel.dalida.15"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/path/to/facebook-icon.png"
+                alt="Facebook"
+                className="icon"
+              />
+            </a>
+            {/* LinkedIn Icon */}
+            <a
+              href="https://www.linkedin.com/in/cinedalida/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/path/to/linkedin-icon.png"
+                alt="LinkedIn"
+                className="icon"
+              />
+            </a>
+            {/* GitHub Icon */}
+            <a
+              href="https://github.com/cinedalida"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/path/to/github-icon.png"
+                alt="GitHub"
+                className="icon"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
