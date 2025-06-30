@@ -14,6 +14,7 @@ const styles = {
   section_about: `py-20 px-10 bg-[#03030B] text-center`,
   section_title: `text-3xl mb-6`,
   about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-lg shadow-lg`,
+  section_text: `mb-4 text-lg`,
 };
 
 const LandingPage = () => {
@@ -36,12 +37,12 @@ const LandingPage = () => {
       <section id="about" className={styles.section_about}>
         <div className={styles.about_container}>
           <h2 className={styles.section_title}>about me.</h2>
-          <p>
+          <p className={styles.section_text}>
             hello, I’m Francine Dalida, you can call me Cine for short!
             Currently a sophomore Computer Science student at De La Salle
             University - Dasmariñas
           </p>
-          <p>
+          <p className={styles.section_text}>
             almost a full-stack developer, an artist wannabe, and a reader by
             choice.
           </p>
