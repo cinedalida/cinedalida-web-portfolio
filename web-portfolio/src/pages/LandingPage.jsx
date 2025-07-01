@@ -1,4 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "../css/landingPage.css";
 
@@ -11,10 +17,12 @@ const styles = {
   btn_hero: `bg-[#4880C9] text-white px-4 py-3 rounded-3xl hover:shadow-[0_0_20px_5px_rgba(72,128,201,0.8)] transition duration-300`,
 
   // about me
-  section_about: `py-20 px-10 bg-[#03030B] text-center`,
-  section_title: `text-3xl mb-6`,
-  about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-lg shadow-lg`,
+  section_about: `py-80 px-10 bg-[#03030B] text-center`,
+  section_title: `text-4xl mb-6`,
+  about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-2xl shadow-lg glow-blue`,
   section_text: `mb-4 text-lg`,
+  about_icon:
+    "text-4xl mx-4 text-[#D4D4D4] hover:text-[#4880C9] transition-colors duration-300 cursor-pointer",
 };
 
 const LandingPage = () => {
@@ -24,7 +32,7 @@ const LandingPage = () => {
       <section id="hero" className={styles.section_hero}>
         <h1 className={styles.title}>Hiraya Manawari</h1>
         <p className={styles.subtitle}>
-          want an application that is both captivating and creative?
+          Want an application that is both captivating and creative?
         </p>
 
         <div className={styles.hero_buttons}>
@@ -38,51 +46,45 @@ const LandingPage = () => {
         <div className={styles.about_container}>
           <h2 className={styles.section_title}>about me.</h2>
           <p className={styles.section_text}>
-            hello, I’m Francine Dalida, you can call me Cine for short!
-            Currently a sophomore Computer Science student at De La Salle
-            University - Dasmariñas
+            Hello, I’m Francine Dalida, you can call me{" "}
+            <span className="font-bold">Cine</span> for short! A third year
+            Computer Science student with specialization in{" "}
+            <span className="font-bold">Intelligent Systems</span> at De La
+            Salle University - Dasmariñas
           </p>
           <p className={styles.section_text}>
-            almost a full-stack developer, an artist wannabe, and a reader by
-            choice.
+            almost a <span className="font-bold">full-stack developer</span>, an
+            <span className="font-bold"> artist wannabe</span>, and a{" "}
+            <span className="font-bold">reader</span> by choice.
           </p>
 
           <div className="contact-icons">
-            {/* Facebook Icon */}
             <a
               href="https://www.facebook.com/ysabel.dalida.15"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/path/to/facebook-icon.png"
-                alt="Facebook"
-                className="icon"
+              <FontAwesomeIcon
+                icon={faFacebook}
+                className={styles.about_icon}
               />
             </a>
-            {/* LinkedIn Icon */}
             <a
               href="https://www.linkedin.com/in/cinedalida/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/path/to/linkedin-icon.png"
-                alt="LinkedIn"
-                className="icon"
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className={styles.about_icon}
               />
             </a>
-            {/* GitHub Icon */}
             <a
               href="https://github.com/cinedalida"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/path/to/github-icon.png"
-                alt="GitHub"
-                className="icon"
-              />
+              <FontAwesomeIcon icon={faGithub} className={styles.about_icon} />
             </a>
           </div>
         </div>
