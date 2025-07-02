@@ -18,11 +18,19 @@ const styles = {
 
   // about me
   section_about: `py-80 px-10 bg-[#03030B] text-center`,
-  section_title: `text-4xl mb-6`,
+  section_title: `text-4xl mb-6`, // global
   about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-2xl shadow-lg glow-blue`,
-  section_text: `mb-4 text-lg`,
+  section_text: `mb-4 text-lg`, // global
   about_icon:
     "text-4xl mx-4 text-[#D4D4D4] hover:text-[#4880C9] transition-colors duration-300 cursor-pointer",
+
+  // tech.
+  section_tech: `py-40 px-10 bg-[#03030B] text-center`,
+  section_subtitle: `text-2xl`,
+
+  // porjects
+
+  // art & posters
 };
 
 const LandingPage = () => {
@@ -91,9 +99,8 @@ const LandingPage = () => {
       </section>
 
       {/* ========== Section 3: Tech ========== */}
-      <section id="tech" className="section-tech">
-        <h2>tech.</h2>
-        // Tech Stack Section
+      <section id="tech" className={styles.section_tech}>
+        <h2 className={styles.section_title}>tech.</h2>
         <div id="tech-stack">
           {/* Front-End Category */}
           <div id="frontend-stack" className="tech-category">
@@ -118,11 +125,11 @@ const LandingPage = () => {
 
       {/* ========== Section 4: Projects ========== */}
       <section id="projects" className="section-projects">
-        <h2>projects.</h2>
+        <h2 className={styles.section_title}>pojects.</h2>
         <div className="project-wrapper container">
           {/* ========== Project: Application Development ========== */}
           <div className="project-section mb-5" id="app-dev">
-            <h3>Application Development</h3>
+            <h3 className={styles.section_subtitle}>application development</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
                 <div className="card h-100">
@@ -179,7 +186,7 @@ const LandingPage = () => {
 
           {/* ========== Project: Prototypes ========== */}
           <div className="project-section mb-5" id="prototypes">
-            <h3>Prototypes</h3>
+            <h3 className={styles.section_subtitle}>prototypes</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
                 <div className="card h-100">
@@ -221,7 +228,7 @@ const LandingPage = () => {
 
           {/* ========== Project: Arts and Posters ========== */}
           <div className="project-section" id="arts-posters">
-            <h3>Arts & Posters</h3>
+            <h3 className={styles.section_subtitle}>arts & posters</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
                 <div className="card h-100">
