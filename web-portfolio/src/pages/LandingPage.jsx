@@ -29,8 +29,10 @@ const styles = {
   section_subtitle: `text-2xl`,
 
   // porjects
+  section_projects: `py-80 px-10 bg-[#03030B] text-center`,
 
   // art & posters
+  section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
 };
 
 const LandingPage = () => {
@@ -124,7 +126,7 @@ const LandingPage = () => {
       </section>
 
       {/* ========== Section 4: Projects ========== */}
-      <section id="projects" className="section-projects">
+      <section id="projects" className={styles.section_projects}>
         <h2 className={styles.section_title}>pojects.</h2>
         <div className="project-wrapper container">
           {/* ========== Project: Application Development ========== */}
@@ -132,15 +134,17 @@ const LandingPage = () => {
             <h3 className={styles.section_subtitle}>application development</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
-                <div className="card h-100">
+                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
                   <img
                     src="la-spot.jpg"
-                    className="card-img-top"
+                    className="card-img-top object-cover h-48 w-full"
                     alt="La Spot"
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">La Spot</h5>
-                    <p className="card-text">
+                  <div className="card-body p-6">
+                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
+                      La Spot
+                    </h5>
+                    <p className="card-text text-[#D4D4D4]">
                       A university parking system web app with live maps and
                       admin control.
                     </p>
@@ -227,7 +231,7 @@ const LandingPage = () => {
           </div>
 
           {/* ========== Project: Arts and Posters ========== */}
-          <div className="project-section" id="arts-posters">
+          <div className="art section" id="arts-posters">
             <h3 className={styles.section_subtitle}>arts & posters</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
