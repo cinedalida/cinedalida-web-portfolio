@@ -153,15 +153,17 @@ const LandingPage = () => {
               </div>
 
               <div className="col">
-                <div className="card h-100">
+                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
                   <img
                     src="hollow-knight.jpg"
-                    className="card-img-top"
+                    className="card-img-top object-cover h-48 w-full"
                     alt="HK Gallery"
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">Hollow Knight Gallery</h5>
-                    <p className="card-text">
+                  <div className="card-body p-6">
+                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
+                      Hollow Knight Gallery
+                    </h5>
+                    <p className="card-text text-[#D4D4D4]">
                       A fan-made gallery showcasing Hollow Knight characters and
                       art.
                     </p>
@@ -170,15 +172,17 @@ const LandingPage = () => {
               </div>
 
               <div className="col">
-                <div className="card h-100">
+                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
                   <img
                     src="product-landing.jpg"
-                    className="card-img-top"
+                    className="card-img-top object-cover h-48 w-full"
                     alt="Product Landing Page"
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">Landing Page</h5>
-                    <p className="card-text">
+                  <div className="card-body p-6">
+                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
+                      Landing Page
+                    </h5>
+                    <p className="card-text text-[#D4D4D4]">
                       A stylish landing page built with HTML, CSS, and
                       Bootstrap.
                     </p>
