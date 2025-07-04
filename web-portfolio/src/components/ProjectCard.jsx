@@ -3,7 +3,7 @@ import React from "react";
 const ProjectCard = ({ image, alt, title, description }) => {
   return (
     <>
-      <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
+      <div className="m-8 mt-10 mx-auto max-w-[1000px] w-full flex flex-wrap justify-center gap-6 card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
         <img
           src={image}
           className="card-img-top object-cover h-48 w-full"
