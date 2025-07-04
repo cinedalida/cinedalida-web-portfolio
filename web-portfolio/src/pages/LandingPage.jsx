@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectCard from "../components/ProjectCard.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -30,9 +31,10 @@ const styles = {
 
   // porjects
   section_projects: `py-80 px-10 bg-[#03030B] text-center`,
+  project_section: `border border-red-500`,
 
   // art & posters
-  section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
+  // section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
 };
 
 const LandingPage = () => {
@@ -128,66 +130,34 @@ const LandingPage = () => {
       {/* ========== Section 4: Projects ========== */}
       <section id="projects" className={styles.section_projects}>
         <h2 className={styles.section_title}>pojects.</h2>
-        <div className="project-wrapper max-w-[1400px] items-center">
+        <div className="project-wrapper">
           {/* ========== Project: Application Development ========== */}
-          <div className="project-section mb-5" id="app-dev">
+          <div className={styles.project_section} id="app-dev">
             <h3 className={styles.section_subtitle}>application development</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
-                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
-                  <img
-                    src="la-spot.jpg"
-                    className="card-img-top object-cover h-48 w-full"
-                    alt="La Spot"
-                  />
-                  <div className="card-body p-6">
-                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
-                      La Spot
-                    </h5>
-                    <p className="card-text text-[#D4D4D4]">
-                      A university parking system web app with live maps and
-                      admin control.
-                    </p>
-                  </div>
-                </div>
+                <ProjectCard
+                  image="la-spot.jpg"
+                  alt="La Spot"
+                  title="La Spot"
+                  description="A university parking system web app with live maps and admin control."
+                />
               </div>
-
               <div className="col">
-                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
-                  <img
-                    src="hollow-knight.jpg"
-                    className="card-img-top object-cover h-48 w-full"
-                    alt="HK Gallery"
-                  />
-                  <div className="card-body p-6">
-                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
-                      Hollow Knight Gallery
-                    </h5>
-                    <p className="card-text text-[#D4D4D4]">
-                      A fan-made gallery showcasing Hollow Knight characters and
-                      art.
-                    </p>
-                  </div>
-                </div>
+                <ProjectCard
+                  image="hollow-knight.jpg"
+                  alt="HK Gallery"
+                  title="Hollow Knight Gallery"
+                  description="A fan-made gallery showcasing Hollow Knight characters and art."
+                />
               </div>
-
               <div className="col">
-                <div className="card h-100 bg-[#181A20] rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_30px_5px_#4880C9]">
-                  <img
-                    src="product-landing.jpg"
-                    className="card-img-top object-cover h-48 w-full"
-                    alt="Product Landing Page"
-                  />
-                  <div className="card-body p-6">
-                    <h5 className="card-title text-2xl font-bold text-[#4880C9] mb-2">
-                      Landing Page
-                    </h5>
-                    <p className="card-text text-[#D4D4D4]">
-                      A stylish landing page built with HTML, CSS, and
-                      Bootstrap.
-                    </p>
-                  </div>
-                </div>
+                <ProjectCard
+                  image="product-landing.jpg"
+                  alt="Product Landing Page"
+                  title="Landing Page"
+                  description="A stylish landing page built with HTML, CSS, and Bootstrap."
+                />
               </div>
             </div>
           </div>
