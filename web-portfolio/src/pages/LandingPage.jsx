@@ -19,7 +19,7 @@ const styles = {
 
   // about me
   section_about: `py-80 px-10 bg-[#03030B] text-center`,
-  section_title: `text-4xl mb-6`, // global
+  section_title: `text-4xl mb-10`, // global
   about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-2xl shadow-lg glow-blue`,
   section_text: `mb-4 text-lg`, // global
   about_icon:
@@ -27,14 +27,14 @@ const styles = {
 
   // tech.
   section_tech: `py-40 px-10 bg-[#03030B] text-center`,
-  section_subtitle: `text-2xl`,
+  section_subtitle: `m-2 text-2xl`, // global
 
   // porjects
   section_projects: `py-80 px-10 bg-[#03030B] text-center`,
   project_section: `border border-red-500`,
 
   // art & posters
-  // section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
+  section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
 };
 
 const LandingPage = () => {
@@ -162,7 +162,7 @@ const LandingPage = () => {
             </div>
           </div>
           {/* ========== Project: Prototypes ========== */}
-          <div className="project-section mb-5" id="prototypes">
+          <div className="project-section mt-100" id="prototypes">
             <h3 className={styles.section_subtitle}>prototypes</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="col">
