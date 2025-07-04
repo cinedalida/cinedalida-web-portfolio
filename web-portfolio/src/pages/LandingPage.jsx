@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard.jsx";
+import NormalCard from "../components/NormalCard.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -164,41 +165,24 @@ const LandingPage = () => {
           {/* ========== Project: Prototypes ========== */}
           <div className="project-section mt-100" id="prototypes">
             <h3 className={styles.section_subtitle}>prototypes</h3>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="rgrid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
               <div className="col">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h5 className="card-title">Lauviah</h5>
-                    <p className="card-text">
-                      A productivity and wellness prototype app for personal
-                      growth.
-                    </p>
-                  </div>
-                </div>
+                <NormalCard
+                  title="Lauviah"
+                  description="A productivity and wellness prototype app for personal growth."
+                />
               </div>
-
               <div className="col">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h5 className="card-title">Apo Kalinga</h5>
-                    <p className="card-text">
-                      Community-based health services prototype for indigenous
-                      groups.
-                    </p>
-                  </div>
-                </div>
+                <NormalCard
+                  title="Apo Kalinga"
+                  description="Community-based health services prototype for indigenous groups."
+                />
               </div>
-
               <div className="col">
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h5 className="card-title">Cha-Ching</h5>
-                    <p className="card-text">
-                      A financial literacy app prototype focused on gamified
-                      learning.
-                    </p>
-                  </div>
-                </div>
+                <NormalCard
+                  title="Cha-Ching"
+                  description="A financial literacy app prototype focused on gamified learning."
+                />
               </div>
             </div>
           </div>
