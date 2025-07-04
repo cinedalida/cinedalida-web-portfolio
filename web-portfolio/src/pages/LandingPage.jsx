@@ -2,6 +2,7 @@ import React from "react";
 import ProjectCard from "../components/ProjectCard.jsx";
 import NormalCard from "../components/NormalCard.jsx";
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -236,25 +237,8 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-
-        {/* ========== Section 5: Footer ========== */}
-        <footer className="section-footer">
-          <div className="footer-content">
-            <p>&copy; 2023 Francine Dalida. All rights reserved.</p>
-            <div className="social-links">
-              <a href="#" className="social-link">
-                LinkedIn
-              </a>
-              <a href="#" className="social-link">
-                GitHub
-              </a>
-              <a href="#" className="social-link">
-                Twitter
-              </a>
-            </div>
-          </div>
-        </footer>
       </div>
+      <Footer />
     </>
   );
 };
