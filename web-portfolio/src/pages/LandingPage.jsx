@@ -128,7 +128,7 @@ const LandingPage = () => {
       {/* ========== Section 4: Projects ========== */}
       <section id="projects" className={styles.section_projects}>
         <h2 className={styles.section_title}>pojects.</h2>
-        <div className="project-wrapper container">
+        <div className="project-wrapper max-w-[1400px] items-center">
           {/* ========== Project: Application Development ========== */}
           <div className="project-section mb-5" id="app-dev">
             <h3 className={styles.section_subtitle}>application development</h3>
@@ -191,7 +191,6 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-
           {/* ========== Project: Prototypes ========== */}
           <div className="project-section mb-5" id="prototypes">
             <h3 className={styles.section_subtitle}>prototypes</h3>
@@ -233,7 +232,6 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-
           {/* ========== Project: Arts and Posters ========== */}
           <div className="art section" id="arts-posters">
             <h3 className={styles.section_subtitle}>arts & posters</h3>
