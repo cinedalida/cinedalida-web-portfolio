@@ -24,7 +24,7 @@ const Navbar = () => {
 
         {/* Links */}
         <div className="flex space-x-8 text-white text-sm font-medium">
-          <a href="#home" className="hover:text-[#4880C9] transition">
+          <a href="#hero" className="hover:text-[#4880C9] transition">
             Home
           </a>
           <a href="#about" className="hover:text-[#4880C9] transition">
@@ -33,8 +33,8 @@ const Navbar = () => {
           <a href="#tech" className="hover:text-[#4880C9] transition">
             Tech
           </a>
-          <a href="#technologies" className="hover:text-[#4880C9] transition">
-            Technologies
+          <a href="#projects" className="hover:text-[#4880C9] transition">
+            Projects
           </a>
         </div>
       </div>
