@@ -199,40 +199,19 @@ const LandingPage = () => {
             {/* ========== Project: Arts and Posters ========== */}
             <div className="art section" id="arts-posters">
               <h3 className={styles.section_subtitle}>arts & posters</h3>
-              <div className="row row-cols-1 row-cols-md-3 g-4">
-                <div className="col">
-                  <div className="card h-100">
-                    <img
-                      src="art-portfolio.jpg"
-                      className="card-img-top"
-                      alt="Art Portfolio"
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">Art Portfolio</h5>
-                      <p className="card-text">
-                        A collection of my digital artworks and illustration
-                        experiments.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col">
-                  <div className="card h-100">
-                    <img
-                      src="posters.jpg"
-                      className="card-img-top"
-                      alt="Posters"
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">Event Posters</h5>
-                      <p className="card-text">
-                        Various posters designed for school events and
-                        organizations.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div className="rgrid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+              <div className="col">
+                <NormalCard
+                  title="art portfolio"
+                  description="Canva presentation for my art compilation. From organizational works, school projects to personal projects."
+                />
+              </div>
+              <div className="col">
+                <NormalCard
+                  title="Artworks"
+                  description="A compilation of my commissioned works both digital and traditional art in Instagram."
+                />
               </div>
             </div>
           </div>
