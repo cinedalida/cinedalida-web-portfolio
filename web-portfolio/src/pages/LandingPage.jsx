@@ -3,6 +3,7 @@ import ProjectCard from "../components/ProjectCard.jsx";
 import NormalCard from "../components/NormalCard.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
+import TechStack from "../components/TechStack.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -114,26 +115,7 @@ const LandingPage = () => {
         {/* ========== Section 3: Tech ========== */}
         <section id="tech" className={styles.section_tech}>
           <h2 className={styles.section_title}>tech.</h2>
-          <div id="tech-stack">
-            {/* Front-End Category */}
-            <div id="frontend-stack" className="tech-category">
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-            </div>
-            {/* Back-End Category */}
-            <div id="backend-stack" className="tech-category">
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-            </div>
-            {/* Other Tools Category */}
-            <div id="other-tools-stack" className="tech-category">
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-              <div className="tech-item"></div>
-            </div>
-          </div>
+          <TechStack />
         </section>
 
         {/* ========== Section 4: Projects ========== */}
