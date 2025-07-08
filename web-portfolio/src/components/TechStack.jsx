@@ -14,23 +14,23 @@ import TechItem from "./TechItem";
 export default function TechStack() {
   const [selectedCategory, setSelectedCategory] = useState("frontend");
 
-  //   const techStacks = {
-  //     frontend: [
-  //       { icon: htmlIcon, alt: "HTML" },
-  //       { icon: cssIcon, alt: "CSS" },
-  //       { icon: jsIcon, alt: "JavaScript" },
-  //       { icon: reactIcon, alt: "React" },
-  //       { icon: bootstrapIcon, alt: "Bootstrap" },
-  //     ],
-  //     backend: [
-  //       // Add your backend stack here
-  //       // { icon: nodeIcon, alt: 'Node.js' },
-  //     ],
-  //     "other-tools": [
-  //       { icon: figmaIcon, alt: "Figma" },
-  //       { icon: viteIcon, alt: "Vite" },
-  //     ],
-  //   };
+  const techStacks = {
+    frontend: [
+      { icon: htmlIcon, alt: "HTML" },
+      { icon: cssIcon, alt: "CSS" },
+      { icon: jsIcon, alt: "JavaScript" },
+      { icon: reactIcon, alt: "React" },
+      { icon: bootstrapIcon, alt: "Bootstrap" },
+    ],
+    backend: [
+      // Add your backend stack here
+      // { icon: nodeIcon, alt: 'Node.js' },
+    ],
+    "other-tools": [
+      { icon: figmaIcon, alt: "Figma" },
+      { icon: viteIcon, alt: "Vite" },
+    ],
+  };
 
   return (
     <section className="tech-section">
