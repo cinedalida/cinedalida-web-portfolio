@@ -1,16 +1,20 @@
+// External Libraries
 import React from "react";
-import ProjectCard from "../components/ProjectCard.jsx";
-import NormalCard from "../components/NormalCard.jsx";
+import { motion } from "framer-motion";
+import { Facebook, Linkedin, Github, Download, Mail } from "lucide-react";
+
+// Local Components
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import ProjectCard from "../components/ProjectCard.jsx";
+import NormalCard from "../components/NormalCard.jsx";
 
+// Media Assets
+import mainLogo from "../assets/main-logo.png";
+import logoShadow from "../assets/main-logo-float.png";
+
+// Local Styles
 import "../css/landingPage.css";
 
 const styles = {
@@ -18,20 +22,35 @@ const styles = {
   section_hero: `h-screen flex flex-col items-center justify-center bg-[#03030B] text-white text-center 0 -20px 30px -10px rgba(255, 255, 255, 0.5)`,
   title: `text-5xl font-bold mb-4`,
   subtitle: `text-xl mb-8`,
-  hero_buttons: `flex space-x-4 mt-6`,
-  btn_hero: `bg-[#4880C9] text-white px-4 py-3 rounded-3xl hover:shadow-[0_0_20px_5px_rgba(72,128,201,0.8)] transition duration-300`,
+  // Hero Button Container (Responsive)
+  hero_buttons: `flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-10 md:mt-12 w-full max-w-xs sm:max-w-none mx-auto`,
+
+  // Primary Button (Download)
+  btn_hero: `group relative px-8 md:px-10 py-3.5 md:py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
+
+  // Secondary Button (Contact)
+  btn_secondary: `px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
 
   // about me
-  section_about: `py-80 px-10 bg-[#03030B] text-center`,
-  section_title: `text-4xl mb-10`, // global
-  about_container: `max-w-3xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-[#444] p-8 rounded-2xl shadow-lg glow-blue`,
-  section_text: `mb-4 text-lg`, // global
+  section_about: `py-32 md:py-80 px-4 md:px-10 bg-[#03030B] text-center relative overflow-hidden`,
+  section_title: `text-4xl md:text-5xl font-bold mb-10 text-white`,
+  about_container: `max-w-5xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
+  section_text: `mb-6 text-lg md:text-xl font-medium`,
   about_icon:
-    "text-4xl mx-4 text-[#D4D4D4] hover:text-[#4880C9] transition-colors duration-300 cursor-pointer",
+    "text-4xl mx-4 text-[#D4D4D4] hover:text-[#4880C9] transition-all duration-300 cursor-pointer",
 
-  // tech.
-  section_tech: `py-40 px-10 bg-[#03030B] text-center`,
-  section_subtitle: `m-2 text-2xl`, // global
+  // badge styling aligned to your naming logic
+  about_badge: `px-4 py-2 bg-[#4880C9]/10 rounded-full border border-[#4880C9]/20 text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#4880C9] inline-block m-2`,
+
+  // tech
+  section_tech: `py-32 md:py-40 px-6 md:px-10 bg-[#03030B] text-center relative`,
+  section_subtitle: `mb-12 text-2xl md:text-3xl font-bold tracking-tight text-white`,
+
+  // Tab and Grid styles
+  tech_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
+  tech_card: `group flex flex-col items-center p-6 bg-[#181A20] rounded-3xl border border-white/5 hover:border-[#4880C9]/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(72,128,201,0.2)]`,
+  tech_icon: `w-12 h-12 mb-4 object-contain group-hover:scale-110 transition-transform duration-300`,
+  tech_label: `text-[10px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-[#4880C9] transition-colors`,
 
   // porjects
   section_projects: `py-80 px-10 bg-[#03030B] text-center`,
@@ -48,68 +67,143 @@ const LandingPage = () => {
       <div className="landing-page">
         {/* ========== Section 1: Hero Page ========== */}
         <section id="hero" className={styles.section_hero}>
-          <h1 className={styles.title}>Hiraya Manawari</h1>
+          <div className="relative flex items-center justify-center mb-12">
+            {/* Shadow Logo (Behind) */}
+            <motion.img
+              src={logoShadow}
+              alt="Shadow"
+              className="absolute w-70 h-100 md:w-64 md:h-64 opacity-40 blur-sm"
+              initial={{ scale: 0.85, y: 10, opacity: 0.4 }}
+              animate={{
+                scale: 0.9,
+                y: -10,
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Main Logo (Front) */}
+            <motion.img
+              src={mainLogo}
+              alt="Main Logo"
+              className="relative z-10 w-100 h-100 md:w-64 md:h-64 drop-shadow-[0_0_20px_rgba(72,128,201,0.3)]"
+              initial={{ scale: 1, y: -15 }}
+              animate={{
+                scale: 1.05,
+                y: 15,
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+
+          <motion.h1
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            className={styles.title}
+          >
+            Hiraya Manawari
+          </motion.h1>
+
           <p className={styles.subtitle}>
             Want an application that is both captivating and creative?
           </p>
 
           <div className={styles.hero_buttons}>
-            <button className={styles.btn_hero}>Download Resume</button>
-            <button className={styles.btn_hero}>Contact Me</button>
+            <button className={styles.btn_hero}>
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <Download
+                  size={18}
+                  className="group-hover:translate-y-0.5 transition-transform"
+                />
+                Get Resume
+              </span>
+            </button>
+
+            {/* Secondary Button */}
+            <button className={styles.btn_secondary}>
+              <Mail size={18} />
+              Let's Talk
+            </button>
           </div>
         </section>
 
         {/* ========== Section 2: About Me ========== */}
         <section id="about" className={styles.section_about}>
-          <div className={styles.about_container}>
-            <h2 className={styles.section_title}>about me.</h2>
-            <p className={styles.section_text}>
-              Hello, I’m Francine Dalida, you can call me{" "}
-              <span className="font-bold">Cine</span> for short! A third year
-              Computer Science student with specialization in{" "}
-              <span className="font-bold">Intelligent Systems</span> at De La
-              Salle University - Dasmariñas
-            </p>
-            <p className={styles.section_text}>
-              almost a <span className="font-bold">full-stack developer</span>,
-              an
-              <span className="font-bold"> artist wannabe</span>, and a{" "}
-              <span className="font-bold">reader</span> by choice.
-            </p>
+          {/* Floating Background Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl aspect-square bg-[#4880C9]/5 blur-[120px] rounded-full -z-10" />
 
-            <div className="contact-icons">
-              <a
-                href="https://www.facebook.com/ysabel.dalida.15"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  className={styles.about_icon}
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/cinedalida/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className={styles.about_icon}
-                />
-              </a>
-              <a
-                href="https://github.com/cinedalida"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className={styles.about_icon}
-                />
-              </a>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={styles.about_container}
+          >
+            <h2 className={styles.section_title}>about me.</h2>
+
+            <div className="max-w-3xl mx-auto">
+              <p className={styles.section_text}>
+                hello there! I'm{" "}
+                <strong className="text-white">
+                  Francine Ysabel B. Dalida
+                </strong>
+                . You can call me{" "}
+                <span className="text-[#4880C9] font-black px-2 py-0.5 bg-[#4880C9]/10 rounded-lg">
+                  Cine
+                </span>
+                .
+              </p>
+
+              <p className="text-[#D4D4D4] mb-8">
+                I am a third-year Computer Science student specializing in
+                <span className="text-white block font-bold mt-2">
+                  Intelligent Systems at De La Salle University - Dasmariñas.
+                </span>
+              </p>
+
+              {/* Skill Badges from AI Studio */}
+              <div className="flex flex-wrap justify-center mb-10">
+                <span className={styles.about_badge}>Full-Stack Dev</span>
+                <span className={styles.about_badge}>Intelligent Systems</span>
+                <span className={styles.about_badge}>Creative Artist</span>
+                <span className={styles.about_badge}>Avid Reader</span>
+              </div>
+
+              {/* Social Icons using Lucide & your about_icon style */}
+              <div className="flex justify-center gap-2">
+                <a
+                  href="https://www.facebook.com/ysabel.dalida.15"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Facebook className={styles.about_icon} size={32} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/cinedalida"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Linkedin className={styles.about_icon} size={32} />
+                </a>
+                <a
+                  href="https://github.com/cinedalida"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github className={styles.about_icon} size={32} />
+                </a>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* ========== Section 3: Tech ========== */}
