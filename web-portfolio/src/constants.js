@@ -227,3 +227,10 @@ export const ARTS = [
     link: "#",
   },
 ];
+
+export const STARTER_QUESTIONS = [
+  { label: "What is 'Hiraya Manawari'?", icon: "✨" },
+  { label: "Tell me about La Spot.", icon: "🚗" },
+  { label: "Design or Code?", icon: "🎨" },
+  { label: "Current CS projects?", icon: "💻" },
+];

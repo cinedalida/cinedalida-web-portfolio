@@ -15,6 +15,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
 import ProjectManager from "../components/ProjectManager.jsx";
+import AiCine from "../components/AiCine.jsx";
 
 // Media Assets
 import mainLogo from "../assets/main-logo.png";
@@ -22,9 +23,6 @@ import logoShadow from "../assets/main-logo-float.png";
 
 // Local Styles
 import "../css/landingPage.css";
-
-// Local data
-import { PROJECTS, PROJECT_CATEGORIES } from "../constants";
 
 const styles = {
   // Hero Section Styles
@@ -231,6 +229,8 @@ const LandingPage = () => {
 
         {/* ========== Section 4: Projects ========== */}
         <ProjectManager />
+        {/* ========== Section 5: AI Chat ========== */}
+        <AiCine />
       </div>
       <Footer />
     </>
