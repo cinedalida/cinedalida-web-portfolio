@@ -115,3 +115,115 @@ export const TECH_STACK = [
     ],
   },
 ];
+
+// Projects Categoies
+
+export const PROJECT_CATEGORIES = [
+  { id: "app-dev", label: "Application Dev" },
+  { id: "prototypes", label: "Prototypes" },
+  { id: "arts-posters", label: "Arts & Posters" },
+];
+
+// Projects Data
+export const PROJECTS = [
+  // Application Development
+  {
+    id: 1,
+    title: "La Spot - DLSU-D Parking System",
+    category: "app-dev",
+    description:
+      "La Spot includes two systems: a User Side for students and staff, and an Admin Side for administrators to manage the system using CRUD operations.",
+    image: "la-spot.jpg",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+    ],
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "Hollow Knight Game Gallery",
+    category: "app-dev",
+    description:
+      "Hollow Knight-themed gallery built to showcase and celebrate the game. Developed to practice multi-page routing and user account control.",
+    image: "hollow-knight.jpg",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+    ],
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "Product Landing Page",
+    category: "app-dev",
+    description:
+      "A Logitech-inspired product landing page created as part of freeCodeCamp's Responsive Web Design certification.",
+    image: "product-landing.jpg",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    link: "#",
+  },
+];
+
+export const PROTOTYPES = [
+  {
+    id: 4,
+    title: "Lauviah Prototype",
+    description:
+      "Your holistic companion for academic success and mental well-being.",
+    image: "/lauviah.jpg",
+    color: "from-blue-600/20 to-indigo-900/40", // Custom gradient color
+    category: "prototypes",
+  },
+  {
+    id: 5,
+    title: "Apo Kalinga Prototype",
+    description:
+      "An intuitive medication management application for senior citizens.",
+    image: "/apo-kalinga.jpg",
+    color: "from-orange-500/20 to-red-900/40",
+    category: "prototypes",
+  },
+  {
+    id: 6,
+    title: "Cha-Ching Prototype",
+    description:
+      "A user-friendly shopping application for a seamless retail experience.",
+    image: "/cha-ching.jpg",
+    color: "from-purple-600/20 to-pink-900/40",
+    category: "prototypes",
+  },
+];
+
+export const ARTS = [
+  {
+    id: 7,
+    title: "Art Portfolio",
+    category: "arts-posters",
+    description:
+      "Canva presentation for my art compilation. From organizational works, school projects to personal projects.",
+    image: "art-portfolio.jpg",
+    tags: ["Canva", "Graphic Design"],
+    link: "#",
+  },
+  {
+    id: 8,
+    title: "Artworks",
+    category: "arts-posters",
+    description:
+      "A compilation of my commissioned works both digital and traditional art on Instagram.",
+    image: "artworks.jpg",
+    tags: ["Digital Art", "Traditional Art", "Commission"],
+    link: "#",
+  },
+];

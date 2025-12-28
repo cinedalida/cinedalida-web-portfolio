@@ -1,14 +1,20 @@
 // External Libraries
-import React from "react";
-import { motion } from "framer-motion";
-import { Facebook, Linkedin, Github, Download, Mail } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Facebook,
+  Linkedin,
+  Github,
+  Download,
+  Mail,
+  ArrowUpRight,
+} from "lucide-react";
 
 // Local Components
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
-import ProjectCard from "../components/ProjectCard.jsx";
-import NormalCard from "../components/NormalCard.jsx";
+import ProjectManager from "../components/ProjectManager.jsx";
 
 // Media Assets
 import mainLogo from "../assets/main-logo.png";
@@ -16,6 +22,9 @@ import logoShadow from "../assets/main-logo-float.png";
 
 // Local Styles
 import "../css/landingPage.css";
+
+// Local data
+import { PROJECTS, PROJECT_CATEGORIES } from "../constants";
 
 const styles = {
   // Hero Section Styles
@@ -33,7 +42,7 @@ const styles = {
 
   // about me
   section_about: `py-32 md:py-80 px-4 md:px-10 bg-[#03030B] text-center relative overflow-hidden`,
-  section_title: `text-4xl md:text-5xl font-bold mb-10 text-white`,
+  section_title: `text-4xl md:text-5xl font-bold mb-10 text-white text-center w-full`,
   about_container: `max-w-5xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
   section_text: `mb-6 text-lg md:text-xl font-medium`,
   about_icon:
@@ -52,13 +61,21 @@ const styles = {
   tech_icon: `w-12 h-12 mb-4 object-contain group-hover:scale-110 transition-transform duration-300`,
   tech_label: `text-[10px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-[#4880C9] transition-colors`,
 
-  // porjects
-  section_projects: `py-80 px-10 bg-[#03030B] text-center`,
-  project_section: `border border-red-500`,
+  // projects
+  section_projects: `py-24 bg-[#03030B] px-6 text-center`,
+  filter_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
+  filter_button: `px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all`,
+  project_grid: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left`,
 
-  // art & posters
-  section_artPosters: `py-80 px-10 bg-[#03030B] text-center`,
+  // project card (glassmorphism style)
+  project_card: `group glass-card rounded-[32px] overflow-hidden border border-white/5 hover:border-[#4880C9]/30 transition-all shadow-2xl flex flex-col h-full`,
+  project_image_container: `h-56 overflow-hidden relative`,
+  project_tag: `text-[10px] uppercase font-bold tracking-tighter text-[#4880C9] bg-[#4880C9]/10 px-2 py-1 rounded`,
 };
+
+export const APP_PROJECT_CATEGORIES = [
+  { id: "app-dev", label: "Application Dev" },
+];
 
 const LandingPage = () => {
   return (
@@ -213,85 +230,7 @@ const LandingPage = () => {
         </section>
 
         {/* ========== Section 4: Projects ========== */}
-        <section id="projects" className={styles.section_projects}>
-          <h2 className={styles.section_title}>pojects.</h2>
-          <div className="project-wrapper">
-            {/* ========== Project: Application Development ========== */}
-            <div className={styles.project_section} id="app-dev">
-              <h3 className={styles.section_subtitle}>
-                application development
-              </h3>
-              <div className="row row-cols-1 row-cols-md-3 g-4">
-                <div className="col">
-                  <ProjectCard
-                    image="la-spot.jpg"
-                    alt="La Spot"
-                    title="La Spot"
-                    description="A university parking system web app with live maps and admin control."
-                  />
-                </div>
-                <div className="col">
-                  <ProjectCard
-                    image="hollow-knight.jpg"
-                    alt="HK Gallery"
-                    title="Hollow Knight Gallery"
-                    description="A fan-made gallery showcasing Hollow Knight characters and art."
-                  />
-                </div>
-                <div className="col">
-                  <ProjectCard
-                    image="product-landing.jpg"
-                    alt="Product Landing Page"
-                    title="Landing Page"
-                    description="A stylish landing page built with HTML, CSS, and Bootstrap."
-                  />
-                </div>
-              </div>
-            </div>
-            {/* ========== Project: Prototypes ========== */}
-            <div className="project-section mt-100" id="prototypes">
-              <h3 className={styles.section_subtitle}>prototypes</h3>
-              <div className="rgrid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-                <div className="col">
-                  <NormalCard
-                    title="Lauviah"
-                    description="A productivity and wellness prototype app for personal growth."
-                  />
-                </div>
-                <div className="col">
-                  <NormalCard
-                    title="Apo Kalinga"
-                    description="Community-based health services prototype for indigenous groups."
-                  />
-                </div>
-                <div className="col">
-                  <NormalCard
-                    title="Cha-Ching"
-                    description="A financial literacy app prototype focused on gamified learning."
-                  />
-                </div>
-              </div>
-            </div>
-            {/* ========== Project: Arts and Posters ========== */}
-            <div className="art section" id="arts-posters">
-              <h3 className={styles.section_subtitle}>arts & posters</h3>
-            </div>
-            <div className="rgrid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-              <div className="col">
-                <NormalCard
-                  title="art portfolio"
-                  description="Canva presentation for my art compilation. From organizational works, school projects to personal projects."
-                />
-              </div>
-              <div className="col">
-                <NormalCard
-                  title="Artworks"
-                  description="A compilation of my commissioned works both digital and traditional art in Instagram."
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProjectManager />
       </div>
       <Footer />
     </>
