@@ -142,27 +142,37 @@ It takes *scraped job postings* and a *parsed user resume* as inputs, then produ
 - *Data Analytics Dashboards*
 - *Job Bookmarking and Application Tracking System*
 - *Secure Document Repository*`,
-    image: "la-spot.jpg",
+    image: "CareerCove_proj.png",
     tags: [
+      "Python",
       "JavaScript",
       "Tailwind CSS",
       "Azure",
+      "Docker",
+      "PostgreSQL",
+      "FastAPI",
       "React.js",
-      "Node.js",
-      "MySQL",
     ],
     link: "https://github.com/cinedalida/CareerCove-frontend",
     hasFrontend: true,
     frontendLink: "https://careercove-six.vercel.app/",
   },
-
   {
     id: 2,
-    title: "La Spot - DLSU-D Parking System",
+    title: "La Spot – DLSU-D Parking System",
     category: "app-dev",
-    description:
-      "La Spot includes two systems: a User Side for students and staff, and an Admin Side for administrators to manage the system using CRUD operations.",
-    image: "la-spot.jpg",
+    description: `
+**La Spot** is a *web-based parking system* developed for **De La Salle University – Dasmariñas**. It was built as a *final project for the Application Development course* to improve parking management on campus.
+<br/>
+<br/>
+The system has two parts:<br/>
+**User Side** – allows students and staff to view available parking slots  
+**Admin Side** – enables administrators to manage parking data using **CRUD operations**
+<br/>
+<br/>
+La Spot provides a clear overview of parking availability and supports **vehicle management**, **parking slot registration**, and **account control** through a *responsive web interface*.
+  `,
+    image: "Laspot_proj.png",
     tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
     link: "https://github.com/cinedalida/La-Spot-Main",
     hasFrontend: false,
@@ -173,16 +183,8 @@ It takes *scraped job postings* and a *parsed user resume* as inputs, then produ
     category: "app-dev",
     description:
       "Hollow Knight-themed gallery built to showcase and celebrate the game. Developed to practice multi-page routing and user account control.",
-    image: "hollow-knight.jpg",
-    tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-    ],
+    image: "GameArtGal_proj.png",
+    tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
     link: "https://github.com/cinedalida/Game-Themed-Landing-Page",
     hasFrontend: false,
   },
@@ -192,7 +194,7 @@ It takes *scraped job postings* and a *parsed user resume* as inputs, then produ
     category: "app-dev",
     description:
       "A Logitech-inspired product landing page created as part of freeCodeCamp's Responsive Web Design certification.",
-    image: "product-landing.jpg",
+    image: "ProdLangPage_proj.png",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     link: "https://github.com/cinedalida/Product-Landing-Page-freeCodeCamp",
     hasFrontend: false,
@@ -208,6 +210,7 @@ export const PROTOTYPES = [
     image: "/lauviah.jpg",
     color: "from-blue-600/20 to-indigo-900/40", // Custom gradient color
     category: "prototypes",
+    link: "#",
   },
   {
     id: 5,
@@ -217,6 +220,7 @@ export const PROTOTYPES = [
     image: "/apo-kalinga.jpg",
     color: "from-orange-500/20 to-red-900/40",
     category: "prototypes",
+    link: "#",
   },
   {
     id: 6,
@@ -226,6 +230,7 @@ export const PROTOTYPES = [
     image: "/cha-ching.jpg",
     color: "from-purple-600/20 to-pink-900/40",
     category: "prototypes",
+    link: "#",
   },
 ];
 
