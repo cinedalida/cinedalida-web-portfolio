@@ -14,4 +14,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light Mode Defaults (When .dark class is NOT present) */
+html {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Dark Mode (When .dark class IS present) */
+html.dark {
+  background-color: #03030b;
+  color: #f8fafc;
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github } from "lucide-react";
-// Import only the filtered app projects
+import { Github, ExternalLink } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { PROJECTS } from "../constants";
 
 const Projects = () => {
@@ -49,14 +51,40 @@ const Projects = () => {
                   <h3 className="text-4xl font-black text-white tracking-tighter leading-none">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    {project.description}
-                  </p>
 
-                  <div className="flex items-center gap-4 pt-4">
-                    <button className="flex items-center gap-2 px-8 py-4 bg-white text-black rounded-2xl font-black text-sm hover:bg-[#4880C9] hover:text-white transition-all">
-                      View Github <Github size={18} />
-                    </button>
+                  <div className="prose prose-invert prose-slate max-w-none text-gray-400 text-lg leading-relaxed">
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                    >
+                      {project.description}
+                    </ReactMarkdown>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-4 pt-4">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cursor-pointer"
+                    >
+                      <button className="flex items-center gap-2 px-8 py-4 bg-white text-black rounded-2xl font-black text-sm hover:bg-[#4880C9] hover:text-white transition-all cursor-pointer active:scale-95">
+                        View Github <Github size={18} />
+                      </button>
+                    </a>
+                    {project.hasFrontend && (
+                      <a
+                        href={project.frontendLink || "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <button className="flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white/20 text-white rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all cursor-pointer active:scale-95">
+                          View Frontend
+                          <ExternalLink size={18} />
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

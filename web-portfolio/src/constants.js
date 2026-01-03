@@ -129,24 +129,46 @@ export const PROJECTS = [
   // Application Development
   {
     id: 1,
+    title: "CareerCove",
+    category: "app-dev",
+    description: `**CareerCove** is a *web-based, skill-oriented job matching platform* for the computing industry that acts as a **middleman between job seekers and scraped job data** from *JobStreet, Indeed, and Kalibrr*.
+<br/>
+<br/>
+It takes *scraped job postings* and a *parsed user resume* as inputs, then produces **personalized job recommendations** using **Named Entity Recognition (NER)** and **semantic similarity search**.
+<br/>
+<br/>
+**Key Features:**
+- *Customizable Career Filters*
+- *Data Analytics Dashboards*
+- *Job Bookmarking and Application Tracking System*
+- *Secure Document Repository*`,
+    image: "la-spot.jpg",
+    tags: [
+      "JavaScript",
+      "Tailwind CSS",
+      "Azure",
+      "React.js",
+      "Node.js",
+      "MySQL",
+    ],
+    link: "https://github.com/cinedalida/CareerCove-frontend",
+    hasFrontend: true,
+    frontendLink: "https://careercove-six.vercel.app/",
+  },
+
+  {
+    id: 2,
     title: "La Spot - DLSU-D Parking System",
     category: "app-dev",
     description:
       "La Spot includes two systems: a User Side for students and staff, and an Admin Side for administrators to manage the system using CRUD operations.",
     image: "la-spot.jpg",
-    tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-    ],
-    link: "#",
+    tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
+    link: "https://github.com/cinedalida/La-Spot-Main",
+    hasFrontend: false,
   },
   {
-    id: 2,
+    id: 3,
     title: "Hollow Knight Game Gallery",
     category: "app-dev",
     description:
@@ -161,7 +183,8 @@ export const PROJECTS = [
       "Express.js",
       "MySQL",
     ],
-    link: "#",
+    link: "https://github.com/cinedalida/Game-Themed-Landing-Page",
+    hasFrontend: false,
   },
   {
     id: 3,
@@ -171,7 +194,8 @@ export const PROJECTS = [
       "A Logitech-inspired product landing page created as part of freeCodeCamp's Responsive Web Design certification.",
     image: "product-landing.jpg",
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    link: "#",
+    link: "https://github.com/cinedalida/Product-Landing-Page-freeCodeCamp",
+    hasFrontend: false,
   },
 ];
 

@@ -16,6 +16,7 @@ import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
 import ProjectManager from "../components/ProjectManager.jsx";
 import AiCine from "../components/AiCine.jsx";
+import ThemeToggle from "../components/ThemeToggle.jsx";
 
 // Media Assets
 import mainLogo from "../assets/main-logo.png";
@@ -231,6 +232,7 @@ const LandingPage = () => {
         <ProjectManager />
         {/* ========== Section 5: AI Chat ========== */}
         <AiCine />
+        <ThemeToggle />
       </div>
       <Footer />
     </>
