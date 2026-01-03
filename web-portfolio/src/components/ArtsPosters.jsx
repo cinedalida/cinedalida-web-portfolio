@@ -39,10 +39,17 @@ const ArtsPosters = () => {
 
               {/* Footer Action */}
               <div className="p-8 pt-0 flex items-center justify-between">
-                <button className="px-6 py-2.5 bg-white text-black rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-[#4880C9] hover:text-white transition-all flex items-center gap-2">
-                  View Work
-                  <ExternalLink size={12} />
-                </button>
+                <a
+                  href={art.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cursor-pointer"
+                >
+                  <button className="px-6 py-2.5 bg-white text-black rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-[#4880C9] hover:text-white transition-all flex items-center gap-2 cursor-pointer active:scale-95">
+                    View Work
+                    <ExternalLink size={12} />
+                  </button>
+                </a>
                 <div className="h-1 w-12 bg-white/10 rounded-full group-hover:bg-[#4880C9] transition-all group-hover:w-24" />
               </div>
             </div>

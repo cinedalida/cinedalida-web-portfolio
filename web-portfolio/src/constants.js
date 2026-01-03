@@ -207,30 +207,30 @@ export const PROTOTYPES = [
     title: "Lauviah Prototype",
     description:
       "Your holistic companion for academic success and mental well-being.",
-    image: "/lauviah.jpg",
+    image: "LauviahCover.png",
     color: "from-blue-600/20 to-indigo-900/40", // Custom gradient color
     category: "prototypes",
-    link: "#",
+    link: "https://www.figma.com/proto/klIQ3861jKHlXda8BUO2V3/Lauviah---Mobile?page-id=143%3A5147&node-id=152-10864&viewport=4146%2C4056%2C0.51&t=t4XOnQcG6YYauBed-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=143%3A5352&show-proto-sidebar=1",
   },
   {
     id: 5,
     title: "Apo Kalinga Prototype",
     description:
       "An intuitive medication management application for senior citizens.",
-    image: "/apo-kalinga.jpg",
+    image: "ApoKalingaCover.png",
     color: "from-orange-500/20 to-red-900/40",
     category: "prototypes",
-    link: "#",
+    link: "https://www.figma.com/proto/WtyqbvOixeUdWkEAjIJ2UG/Apo-Kalinga---Mobile?node-id=1-3203&t=Zu9LSYSNREf1HMAA-1",
   },
   {
     id: 6,
     title: "Cha-Ching Prototype",
     description:
       "A user-friendly shopping application for a seamless retail experience.",
-    image: "/cha-ching.jpg",
+    image: "ChachingCover.png",
     color: "from-purple-600/20 to-pink-900/40",
     category: "prototypes",
-    link: "#",
+    link: "https://www.figma.com/proto/eKpQmyexgED8oGf6kVs1xI/Cha-Ching-Shop-Mobile?node-id=125-1152&t=9O4lKfAb2sqxPWbC-1",
   },
 ];
 
@@ -241,9 +241,8 @@ export const ARTS = [
     category: "arts-posters",
     description:
       "Canva presentation for my art compilation. From organizational works, school projects to personal projects.",
-    image: "art-portfolio.jpg",
-    tags: ["Canva", "Graphic Design"],
-    link: "#",
+    image: "ArtPortfolio_anp.png",
+    link: "https://www.canva.com/design/DAGqDxPSwAw/gH_ud84KudWeqiTK7YFcTQ/view?utm_content=DAGqDxPSwAw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7ddaf47cdc",
   },
   {
     id: 8,
@@ -251,9 +250,16 @@ export const ARTS = [
     category: "arts-posters",
     description:
       "A compilation of my commissioned works both digital and traditional art on Instagram.",
-    image: "artworks.jpg",
-    tags: ["Digital Art", "Traditional Art", "Commission"],
-    link: "#",
+    image: "ArtAcc_anp.png",
+    link: "https://www.instagram.com/peamupbubbber/",
+  },
+  {
+    id: 9,
+    title: "Posters",
+    category: "arts-posters",
+    description: "A compilation of my creative posters on Instagram.",
+    image: "PosterAcc_anp.png",
+    link: "https://www.instagram.com/pan_cinen/",
   },
 ];
 
