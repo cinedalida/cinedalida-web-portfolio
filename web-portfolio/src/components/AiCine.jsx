@@ -4,6 +4,9 @@ import { Send, User, Sparkles } from "lucide-react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { STARTER_QUESTIONS } from "../constants";
 
+// TODO: Fix AI Cine, possibly come up with a witty name!
+// TODO: Organize Imports
+
 const AiCine = () => {
   const [messages, setMessages] = useState([
     {

@@ -47,10 +47,11 @@ export const TECH_STACK = [
     id: "back-end",
     label: "Backend",
     items: [
-      { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
       { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
-      { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "Java", icon: "https://cdn.simpleicons.org/openjdk/EA2D2E" },
+      { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+      { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+      { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase/FFCA28" },
       {
         name: "PostgreSQL",

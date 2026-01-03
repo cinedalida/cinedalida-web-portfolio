@@ -72,6 +72,10 @@ const styles = {
   project_tag: `text-[10px] uppercase font-bold tracking-tighter text-[#4880C9] bg-[#4880C9]/10 px-2 py-1 rounded`,
 };
 
+// TODO: Add Animation for Hero Page
+// TODO: Fix Light and Dark Mode Colors
+// TODO: Adjust formats, capitalizations, quotes, names(?)
+
 export const APP_PROJECT_CATEGORIES = [
   { id: "app-dev", label: "Application Dev" },
 ];
@@ -134,21 +138,31 @@ const LandingPage = () => {
           </p>
 
           <div className={styles.hero_buttons}>
-            <button className={styles.btn_hero}>
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                <Download
-                  size={18}
-                  className="group-hover:translate-y-0.5 transition-transform"
-                />
-                Get Resume
-              </span>
-            </button>
-
-            {/* Secondary Button */}
-            <button className={styles.btn_secondary}>
-              <Mail size={18} />
-              Let's Talk
-            </button>
+            <a
+              href="/Francine-Dalida-Resume2025.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer"
+            >
+              <button className={styles.btn_hero}>
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Download
+                    size={18}
+                    className="group-hover:translate-y-0.5 transition-transform"
+                  />
+                  Get Resume
+                </span>
+              </button>
+            </a>
+            <a
+              href="mailto:francine.dalida@gmail.com"
+              className="cursor-pointer"
+            >
+              <button className={styles.btn_secondary}>
+                <Mail size={18} />
+                Let's Talk
+              </button>
+            </a>
           </div>
         </section>
 
