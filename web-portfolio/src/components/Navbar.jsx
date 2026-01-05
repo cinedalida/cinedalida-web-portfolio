@@ -54,7 +54,9 @@ const Navbar = () => {
       >
         <div
           className={`backdrop-blur-md transition-all duration-500 border border-white/10 rounded-full px-8 py-3 shadow-xl pointer-events-auto flex items-center justify-center gap-12 ${
-            scrolled ? "bg-[#0C1B53]/40 scale-95" : "bg-[#0C1B53]/20 scale-100"
+            scrolled
+              ? "bg-white/80 dark:bg-[#0C1B53]/40"
+              : "bg-white/40 dark:bg-[#0C1B53]/20"
           }`}
         >
           {/* First half of links */}
@@ -84,7 +86,7 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleScrollToLink(e, link.href)}
-                className="text-sm font-medium text-white hover:text-[#4880C9] transition-all relative group uppercase tracking-widest"
+                className="text-sm font-medium text-slate-700 dark:text-white hover:text-[#4880C9] transition-all relative group uppercase tracking-widest"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4880C9] transition-all duration-300 group-hover:w-full" />

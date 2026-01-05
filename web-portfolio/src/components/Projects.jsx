@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-10 px-4 relative overflow-hidden bg-[#03030B]"
+      className="py-20 px-10 relative overflow-hidden bg-slate-50 dark:bg-[#03030B] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="space-y-24">
@@ -48,7 +48,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-4xl font-black text-white tracking-tighter leading-none">
+                  <h3 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-none">
                     {project.title}
                   </h3>
 

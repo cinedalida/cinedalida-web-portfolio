@@ -6,7 +6,7 @@ const Prototypes = () => {
   return (
     <section
       id="prototypes"
-      className="py-10 px-4 bg-[#03030B] relative overflow-hidden"
+      className="py-10 px-4 bg-slate-50 dark:bg-[#03030B] transition-colors duration-500 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">

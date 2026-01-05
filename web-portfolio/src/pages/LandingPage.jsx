@@ -16,7 +16,6 @@ import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
 import ProjectManager from "../components/ProjectManager.jsx";
 import AiCine from "../components/AiCine.jsx";
-import ThemeToggle from "../components/ThemeToggle.jsx";
 
 // Media Assets
 import mainLogo from "../assets/main-logo.png";
@@ -27,47 +26,54 @@ import "../css/landingPage.css";
 
 const styles = {
   // Hero Section Styles
-  section_hero: `h-screen flex flex-col items-center justify-center bg-[#03030B] text-white text-center 0 -20px 30px -10px rgba(255, 255, 255, 0.5)`,
-  title: `text-5xl font-bold mb-4`,
-  subtitle: `text-xl mb-8`,
-  // Hero Button Container (Responsive)
+  // Changed bg and removed the static white text color
+  section_hero: `h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-[#03030B] text-slate-900 dark:text-white text-center transition-colors duration-500`,
+  title: `text-5xl font-bold mb-4 text-slate-900 dark:text-white`,
+  subtitle: `text-xl mb-8 text-slate-600 dark:text-slate-300`,
+
   hero_buttons: `flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-10 md:mt-12 w-full max-w-xs sm:max-w-none mx-auto`,
 
   // Primary Button (Download)
   btn_hero: `group relative px-8 md:px-10 py-3.5 md:py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
 
   // Secondary Button (Contact)
-  btn_secondary: `px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
+  // Adjusted border and text for visibility in light mode
+  btn_secondary: `px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-slate-300 dark:border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-600 dark:text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
 
   // about me
-  section_about: `py-32 md:py-80 px-4 md:px-10 bg-[#03030B] text-center relative overflow-hidden`,
-  section_title: `text-4xl md:text-5xl font-bold mb-10 text-white text-center w-full`,
-  about_container: `max-w-5xl mx-auto text-center text-[#D4D4D4] leading-relaxed border border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
-  section_text: `mb-6 text-lg md:text-xl font-medium`,
+  section_about: `py-32 md:py-80 px-4 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative overflow-hidden transition-colors duration-500`,
+  // Section titles must switch from dark to white
+  section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
+  // Container needs border and text adjustments
+  about_container: `max-w-5xl mx-auto text-center text-slate-600 dark:text-[#D4D4D4] leading-relaxed border border-slate-200 dark:border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
+  section_text: `mb-6 text-lg md:text-xl font-medium text-slate-700 dark:text-slate-200`,
+  // Icons should be dark gray in light mode
   about_icon:
-    "text-4xl mx-4 text-[#D4D4D4] hover:text-[#4880C9] transition-all duration-300 cursor-pointer",
+    "text-4xl mx-4 text-slate-400 dark:text-[#D4D4D4] hover:text-[#4880C9] transition-all duration-300 cursor-pointer",
 
-  // badge styling aligned to your naming logic
   about_badge: `px-4 py-2 bg-[#4880C9]/10 rounded-full border border-[#4880C9]/20 text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#4880C9] inline-block m-2`,
 
   // tech
-  section_tech: `py-32 md:py-40 px-6 md:px-10 bg-[#03030B] text-center relative`,
-  section_subtitle: `mb-12 text-2xl md:text-3xl font-bold tracking-tight text-white`,
+  section_tech: `py-32 md:py-40 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative transition-colors duration-500`,
+  section_subtitle: `mb-12 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white`,
 
   // Tab and Grid styles
   tech_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
-  tech_card: `group flex flex-col items-center p-6 bg-[#181A20] rounded-3xl border border-white/5 hover:border-[#4880C9]/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(72,128,201,0.2)]`,
+  // Tech cards should have a light bg in light mode
+  tech_card: `group flex flex-col items-center p-6 bg-white dark:bg-[#181A20] rounded-3xl border border-slate-200 dark:border-white/5 hover:border-[#4880C9]/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(72,128,201,0.2)]`,
   tech_icon: `w-12 h-12 mb-4 object-contain group-hover:scale-110 transition-transform duration-300`,
-  tech_label: `text-[10px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-[#4880C9] transition-colors`,
+  tech_label: `text-[10px] font-bold text-slate-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-[#4880C9] transition-colors`,
 
   // projects
-  section_projects: `py-24 bg-[#03030B] px-6 text-center`,
+  // Ensure the project section background also toggles
+  section_projects: `py-24 bg-slate-50 dark:bg-[#03030B] px-6 text-center transition-colors duration-500`,
   filter_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
   filter_button: `px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all`,
   project_grid: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left`,
 
   // project card (glassmorphism style)
-  project_card: `group glass-card rounded-[32px] overflow-hidden border border-white/5 hover:border-[#4880C9]/30 transition-all shadow-2xl flex flex-col h-full`,
+  // Updated border for light mode visibility
+  project_card: `group glass-card rounded-[32px] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-[#4880C9]/30 transition-all shadow-2xl flex flex-col h-full`,
   project_image_container: `h-56 overflow-hidden relative`,
   project_tag: `text-[10px] uppercase font-bold tracking-tighter text-[#4880C9] bg-[#4880C9]/10 px-2 py-1 rounded`,
 };
@@ -183,7 +189,7 @@ const LandingPage = () => {
             <div className="max-w-3xl mx-auto">
               <p className={styles.section_text}>
                 Hello there! I'm{" "}
-                <strong className="text-white">
+                <strong className="text-slate-900 dark:text-white">
                   Francine Ysabel B. Dalida
                 </strong>
                 . You can call me{" "}
@@ -193,7 +199,7 @@ const LandingPage = () => {
                 .
               </p>
 
-              <p className="text-[#D4D4D4] mb-8">
+              <p className="text-slate-600 dark:text-[#D4D4D4] mb-8">
                 I am a third-year Computer Science student specializing in
                 <span className="text-white block font-bold mt-2">
                   Intelligent Systems at De La Salle University - Dasmariñas.
@@ -246,7 +252,6 @@ const LandingPage = () => {
         <ProjectManager />
         {/* ========== Section 5: AI Chat ========== */}
         <AiCine />
-        <ThemeToggle />
       </div>
       <Footer />
     </>

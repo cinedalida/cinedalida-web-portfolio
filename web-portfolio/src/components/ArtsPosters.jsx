@@ -29,10 +29,10 @@ const ArtsPosters = () => {
 
               {/* Info Content */}
               <div className="p-8 space-y-4 flex-grow">
-                <h3 className="text-3xl font-black text-white group-hover:text-[#4880C9] transition-colors">
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white group-hover:text-[#4880C9] transition-colors">
                   {art.title}
                 </h3>
-                <p className="text-gray-400 font-medium leading-relaxed">
+                <p className="text-slate-600 dark:text-gray-400 font-medium leading-relaxed">
                   {art.description}
                 </p>
               </div>

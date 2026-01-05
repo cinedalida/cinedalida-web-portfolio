@@ -3,15 +3,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(true);
+  // 1. Initialize state based on localStorage or system preference
+  const [isDark, setIsDark] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme === "dark";
+    }
+    // Fallback to system preference if no saved theme exists
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
-  // Sync theme with the document's class list
+  // 2. Sync theme with document class and persist to localStorage
   useEffect(() => {
     const root = window.document.documentElement;
+    console.log("Theme changing to:", isDark ? "dark" : "light"); // Add this
+    console.log("Root classes:", root.classList); // Add this
     if (isDark) {
       root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDark]);
 
@@ -21,7 +33,7 @@ const ThemeToggle = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsDark(!isDark)}
-        className="w-14 h-14 rounded-2xl bg-white/10 dark:bg-[#181A20]/80 backdrop-blur-xl border border-white/10 dark:border-white/5 flex items-center justify-center shadow-2xl hover:border-[#4880C9]/50 transition-colors group"
+        className="w-14 h-14 rounded-2xl bg-slate-200 dark:bg-[#181A20]/80 backdrop-blur-xl border border-slate-300 dark:border-white/5 flex items-center justify-center shadow-2xl hover:border-[#4880C9]/50 transition-colors group"
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
@@ -38,6 +50,7 @@ const ThemeToggle = () => {
 
         {/* Floating Tooltip */}
         <div className="absolute right-full mr-4 px-3 py-1 bg-white dark:bg-[#181A20] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10">
+          {/* 3. Updated logic: If it's dark, the button should say "Light Mode" because that's what happens on click */}
           {isDark ? "Light Mode" : "Dark Mode"}
         </div>
       </motion.button>

@@ -55,7 +55,7 @@ const TechStack = () => {
                   <motion.div
                     key={item.name}
                     whileHover={{ y: -8, scale: 1.05 }}
-                    className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-[#181A20]/60 border border-white/5 rounded-[32px] transition-all duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
+                    className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-[#181A20]/60 border-slate-200 dark:border-white/5 rounded-[32px] transition-all duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
                   >
                     {/* Icon Wrapper */}
                     <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 mb-3 md:mb-4 drop-shadow-2xl flex items-center justify-center">
@@ -77,7 +77,7 @@ const TechStack = () => {
                     </div>
 
                     {/* Tech Name */}
-                    <span className="text-[10px] md:text-xs font-black text-slate-400 group-hover:text-white transition-colors uppercase tracking-widest text-center">
+                    <span className="text-[10px] md:text-xs font-black text-slate-500 dark:text-slate-400 group-hover:text-white transition-colors uppercase tracking-widest text-center">
                       {item.name}
                     </span>
 

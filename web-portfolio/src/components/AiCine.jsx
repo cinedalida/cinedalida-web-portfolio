@@ -85,10 +85,13 @@ PERSONALITY & TONE:
   };
 
   return (
-    <section id="ai-cine" className="py-20 px-4 relative bg-[#03030B]">
+    <section
+      id="ai-cine"
+      className="py-20 px-4 relative bg-slate-50 dark:bg-[#03030B] transition-colors duration-500"
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4">
+          <h2 className="text-4xl md:text-5xl font-black ext-slate-900 dark:text-white tracking-tighter mb-4">
             ai cine.
           </h2>
           <p className="text-gray-400 font-medium uppercase tracking-widest text-xs">
@@ -104,7 +107,9 @@ PERSONALITY & TONE:
                 <Sparkles className="text-white" size={20} />
               </div>
               <div>
-                <h3 className="font-black text-white text-lg">cine.ai</h3>
+                <h3 className="font-black ext-slate-900 dark:text-white text-lg">
+                  cine.ai
+                </h3>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-[9px] uppercase font-bold text-emerald-500 tracking-widest">
@@ -189,7 +194,7 @@ PERSONALITY & TONE:
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="ask me about my projects..."
-                className="w-full bg-[#03030B] border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-white focus:outline-none focus:border-[#4880C9] transition-all"
+                className="w-full bg-white dark:bg-[#03030B] border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-white focus:outline-none focus:border-[#4880C9] transition-all"
               />
               <button
                 type="submit"

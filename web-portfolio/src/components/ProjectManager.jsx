@@ -9,9 +9,12 @@ const ProjectManager = () => {
   const [filter, setFilter] = useState("app-dev");
 
   return (
-    <section id="projects" className="py-24 bg-[#03030B] px-6">
+    <section
+      id="projects"
+      className="py-24 bg-slate-50 dark:bg-[#03030B] px-6 transition-colors duration-500"
+    >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black text-white text-center tracking-tighter mb-16">
+        <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter mb-16 text-center">
           projects.
         </h2>
 
