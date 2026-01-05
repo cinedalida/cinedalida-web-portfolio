@@ -1,9 +1,12 @@
+// External Libraries
 import React from "react";
-import { NAV_LINKS } from "../constants"; // Using centralized data
+
+// Local Components/Constants
+import { NAV_LINKS } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="py-16 border-t border-white/5 bg-slate-50 dark:bg-[#03030B] relative z-10 transition-colors duration-500">
+    <footer className="py-16 border-t border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#03030B] relative z-10 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Brand Section */}
@@ -31,7 +34,7 @@ const Footer = () => {
         </div>
 
         {/* Decorative Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 text-center">
+        <div className="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center">
           <p className="text-slate-600 text-xs font-bold uppercase tracking-[0.4em]">
             Bridging Design and Technology: Where Form Meets Function
           </p>

@@ -16,6 +16,7 @@ import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
 import ProjectManager from "../components/ProjectManager.jsx";
 import AiCine from "../components/AiCine.jsx";
+import ThemeToggle from "../components/ThemeToggle.jsx";
 
 // Media Assets
 import mainLogo from "../assets/main-logo.png";
@@ -26,7 +27,6 @@ import "../css/landingPage.css";
 
 const styles = {
   // Hero Section Styles
-  // Changed bg and removed the static white text color
   section_hero: `h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-[#03030B] text-slate-900 dark:text-white text-center transition-colors duration-500`,
   title: `text-5xl font-bold mb-4 text-slate-900 dark:text-white`,
   subtitle: `text-xl mb-8 text-slate-600 dark:text-slate-300`,
@@ -37,17 +37,13 @@ const styles = {
   btn_hero: `group relative px-8 md:px-10 py-3.5 md:py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
 
   // Secondary Button (Contact)
-  // Adjusted border and text for visibility in light mode
   btn_secondary: `px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-slate-300 dark:border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-600 dark:text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
 
   // about me
   section_about: `py-32 md:py-80 px-4 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative overflow-hidden transition-colors duration-500`,
-  // Section titles must switch from dark to white
   section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
-  // Container needs border and text adjustments
   about_container: `max-w-5xl mx-auto text-center text-slate-600 dark:text-[#D4D4D4] leading-relaxed border border-slate-200 dark:border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
   section_text: `mb-6 text-lg md:text-xl font-medium text-slate-700 dark:text-slate-200`,
-  // Icons should be dark gray in light mode
   about_icon:
     "text-4xl mx-4 text-slate-400 dark:text-[#D4D4D4] hover:text-[#4880C9] transition-all duration-300 cursor-pointer",
 
@@ -59,28 +55,21 @@ const styles = {
 
   // Tab and Grid styles
   tech_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
-  // Tech cards should have a light bg in light mode
   tech_card: `group flex flex-col items-center p-6 bg-white dark:bg-[#181A20] rounded-3xl border border-slate-200 dark:border-white/5 hover:border-[#4880C9]/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(72,128,201,0.2)]`,
   tech_icon: `w-12 h-12 mb-4 object-contain group-hover:scale-110 transition-transform duration-300`,
   tech_label: `text-[10px] font-bold text-slate-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-[#4880C9] transition-colors`,
 
   // projects
-  // Ensure the project section background also toggles
   section_projects: `py-24 bg-slate-50 dark:bg-[#03030B] px-6 text-center transition-colors duration-500`,
   filter_tab_container: `flex flex-wrap justify-center gap-4 mb-16`,
   filter_button: `px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all`,
   project_grid: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left`,
 
   // project card (glassmorphism style)
-  // Updated border for light mode visibility
   project_card: `group glass-card rounded-[32px] overflow-hidden border border-slate-200 dark:border-white/5 hover:border-[#4880C9]/30 transition-all shadow-2xl flex flex-col h-full`,
   project_image_container: `h-56 overflow-hidden relative`,
   project_tag: `text-[10px] uppercase font-bold tracking-tighter text-[#4880C9] bg-[#4880C9]/10 px-2 py-1 rounded`,
 };
-
-// TODO: Add Animation for Hero Page
-// TODO: Fix Light and Dark Mode Colors
-// TODO: Adjust formats, capitalizations, quotes, names(?)
 
 export const APP_PROJECT_CATEGORIES = [
   { id: "app-dev", label: "Application Dev" },
@@ -98,7 +87,7 @@ const LandingPage = () => {
             <motion.img
               src={logoShadow}
               alt="Shadow"
-              className="absolute w-70 h-100 md:w-64 md:h-64 opacity-40 blur-sm"
+              className="absolute w-70 h-100 md:w-64 md:h-64 opacity-10 dark:opacity-40 blur-sm transition-opacity"
               initial={{ scale: 0.85, y: 10, opacity: 0.4 }}
               animate={{
                 scale: 0.9,
@@ -174,7 +163,6 @@ const LandingPage = () => {
 
         {/* ========== Section 2: About Me ========== */}
         <section id="about" className={styles.section_about}>
-          {/* Floating Background Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl aspect-square bg-[#4880C9]/5 blur-[120px] rounded-full -z-10" />
 
           <motion.div
@@ -201,12 +189,11 @@ const LandingPage = () => {
 
               <p className="text-slate-600 dark:text-[#D4D4D4] mb-8">
                 I am a third-year Computer Science student specializing in
-                <span className="text-white block font-bold mt-2">
+                <span className="text-slate-900 dark:text-white block font-bold mt-2">
                   Intelligent Systems at De La Salle University - Dasmariñas.
                 </span>
               </p>
 
-              {/* Skill Badges from AI Studio */}
               <div className="flex flex-wrap justify-center mb-10">
                 <span className={styles.about_badge}>Full-Stack Dev</span>
                 <span className={styles.about_badge}>Intelligent Systems</span>
@@ -214,7 +201,6 @@ const LandingPage = () => {
                 <span className={styles.about_badge}>Avid Reader</span>
               </div>
 
-              {/* Social Icons using Lucide & your about_icon style */}
               <div className="flex justify-center gap-2">
                 <a
                   href="https://www.facebook.com/ysabel.dalida.15"
@@ -252,6 +238,7 @@ const LandingPage = () => {
         <ProjectManager />
         {/* ========== Section 5: AI Chat ========== */}
         <AiCine />
+        <ThemeToggle />
       </div>
       <Footer />
     </>

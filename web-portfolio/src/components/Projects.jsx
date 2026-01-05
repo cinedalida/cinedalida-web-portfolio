@@ -1,9 +1,12 @@
+// External Libraries
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+
+// Local Components/Constants
 import { PROJECTS } from "../constants";
 
 const Projects = () => {
@@ -24,10 +27,10 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group glass-card rounded-[40px] p-6 md:p-10 border border-white/5 flex flex-col lg:flex-row gap-12 hover:border-[#4880C9]/30 transition-all duration-700 shadow-2xl"
+                className="group glass-card rounded-[40px] p-6 md:p-10 border border-slate-200 dark:border-white/5 flex flex-col lg:flex-row gap-12 hover:border-[#4880C9]/30 transition-all duration-700 shadow-2xl"
               >
                 {/* Image Side */}
-                <div className="w-full lg:w-1/2 rounded-[30px] overflow-hidden border border-white/10 relative">
+                <div className="w-full lg:w-1/2 rounded-[30px] overflow-hidden border border-slate-200 dark:border-white/10 relative">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -52,7 +55,7 @@ const Projects = () => {
                     {project.title}
                   </h3>
 
-                  <div className="prose prose-invert prose-slate max-w-none text-gray-400 text-lg leading-relaxed">
+                  <div className="prose prose-slate max-w-none text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       rehypePlugins={[rehypeRaw]}
@@ -68,7 +71,7 @@ const Projects = () => {
                       rel="noreferrer"
                       className="cursor-pointer"
                     >
-                      <button className="flex items-center gap-2 px-8 py-4 bg-white text-black rounded-2xl font-black text-sm hover:bg-[#4880C9] hover:text-white transition-all cursor-pointer active:scale-95">
+                      <button className="flex items-center gap-2 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-2xl font-black text-sm hover:bg-[#4880C9] dark:hover:bg-[#4880C9] hover:text-white dark:hover:text-white transition-all cursor-pointer active:scale-95 shadow-lg">
                         View Github <Github size={18} />
                       </button>
                     </a>
@@ -79,7 +82,7 @@ const Projects = () => {
                         rel="noreferrer"
                         className="cursor-pointer"
                       >
-                        <button className="flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white/20 text-white rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all cursor-pointer active:scale-95">
+                        <button className="flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-slate-300 dark:border-white/20 text-slate-700 dark:text-white rounded-2xl font-black text-sm hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all cursor-pointer active:scale-95">
                           View Frontend
                           <ExternalLink size={18} />
                         </button>

@@ -1,7 +1,10 @@
+// External Libraries
 import React from "react";
 import { motion } from "framer-motion";
-import { ARTS } from "../constants";
 import { ExternalLink } from "lucide-react";
+
+// Local Components/Constants
+import { ARTS } from "../constants";
 
 const ArtsPosters = () => {
   return (
@@ -16,9 +19,9 @@ const ArtsPosters = () => {
             className="group relative h-full"
           >
             {/* Glass Card Container */}
-            <div className="rounded-[40px] overflow-hidden glass-card border border-white/5 p-4 h-full flex flex-col transition-all duration-700 hover:border-[#4880C9]/30 shadow-lg hover:shadow-2xl">
+            <div className="rounded-[40px] overflow-hidden glass-card border border-slate-200 dark:border-white/5 p-4 h-full flex flex-col transition-all duration-700 hover:border-[#4880C9]/30 shadow-lg hover:shadow-2xl">
               {/* Image Showcase */}
-              <div className="aspect-[4/3] overflow-hidden relative rounded-[30px] border border-white/5">
+              <div className="aspect-[4/3] overflow-hidden relative rounded-[30px] border border-slate-200 dark:border-white/5">
                 <img
                   src={art.image}
                   alt={art.title}
@@ -45,12 +48,13 @@ const ArtsPosters = () => {
                   rel="noreferrer"
                   className="cursor-pointer"
                 >
-                  <button className="px-6 py-2.5 bg-white text-black rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-[#4880C9] hover:text-white transition-all flex items-center gap-2 cursor-pointer active:scale-95">
+                  <button className="px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-[#4880C9] dark:hover:bg-[#4880C9] hover:text-white dark:hover:text-white transition-all flex items-center gap-2 cursor-pointer active:scale-95">
                     View Work
                     <ExternalLink size={12} />
                   </button>
                 </a>
-                <div className="h-1 w-12 bg-white/10 rounded-full group-hover:bg-[#4880C9] transition-all group-hover:w-24" />
+
+                <div className="h-1 w-12 bg-slate-200 dark:bg-white/10 rounded-full group-hover:bg-[#4880C9] transition-all group-hover:w-24" />
               </div>
             </div>
           </motion.div>

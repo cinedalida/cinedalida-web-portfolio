@@ -1,6 +1,9 @@
+// External Libraries
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Menu, X } from "lucide-react";
+
+// Local Components/Constants
 import { NAV_LINKS } from "../constants";
 
 const Navbar = () => {
@@ -15,7 +18,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll logic from AI Studio
   const handleScrollToLink = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
@@ -39,13 +41,14 @@ const Navbar = () => {
       <div className="fixed top-6 left-6 z-[60] md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 bg-[#0C1B53]/80 backdrop-blur-xl border border-white/10 rounded-2xl flex items-center justify-center shadow-lg text-white"
+          /* FIX: Added bg-white and dark: variant. Added text-slate-900 for light mode. */
+          className="w-12 h-12 bg-white/80 dark:bg-[#0C1B53]/80 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-2xl flex items-center justify-center shadow-lg text-slate-900 dark:text-white transition-colors"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Desktop Navbar (Pill Design from AI Studio) */}
+      {/* Desktop Navbar */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -53,7 +56,7 @@ const Navbar = () => {
         className="fixed top-8 left-0 right-0 z-50 hidden md:flex justify-center items-center pointer-events-none px-4"
       >
         <div
-          className={`backdrop-blur-md transition-all duration-500 border border-white/10 rounded-full px-8 py-3 shadow-xl pointer-events-auto flex items-center justify-center gap-12 ${
+          className={`backdrop-blur-md transition-all duration-500 border border-slate-200 dark:border-white/10 rounded-full px-8 py-3 shadow-xl pointer-events-auto flex items-center justify-center gap-12 ${
             scrolled
               ? "bg-white/80 dark:bg-[#0C1B53]/40"
               : "bg-white/40 dark:bg-[#0C1B53]/20"
@@ -66,7 +69,7 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleScrollToLink(e, link.href)}
-                className="text-sm font-medium text-white hover:text-[#4880C9] transition-all relative group uppercase tracking-widest"
+                className="text-sm font-medium text-slate-700 dark:text-white hover:text-[#4880C9] transition-all relative group uppercase tracking-widest"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4880C9] transition-all duration-300 group-hover:w-full" />
@@ -96,7 +99,7 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay (From AI Studio) */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -104,14 +107,14 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25 }}
-            className="fixed top-0 left-0 bottom-0 w-[80%] z-[56] md:hidden bg-[#03030B] shadow-2xl p-8 pt-24 flex flex-col gap-8"
+            className="fixed top-0 left-0 bottom-0 w-[80%] z-[56] md:hidden bg-slate-50 dark:bg-[#03030B] shadow-2xl p-8 pt-24 flex flex-col gap-8 transition-colors"
           >
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleScrollToLink(e, link.href)}
-                className="text-2xl font-bold text-white uppercase tracking-widest hover:text-[#4880C9]"
+                className="text-2xl font-bold text-slate-900 dark:text-white uppercase tracking-widest hover:text-[#4880C9] transition-colors"
               >
                 {link.label}
               </a>

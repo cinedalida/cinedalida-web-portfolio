@@ -1,12 +1,15 @@
+// External Libraries
 import React from "react";
 import { motion } from "framer-motion";
+
+// Local Components/Constants
 import { PROTOTYPES } from "../constants";
 
 const Prototypes = () => {
   return (
     <section
       id="prototypes"
-      className="py-10 px-4 bg-slate-50 dark:bg-[#03030B] transition-colors duration-500 relative overflow-hidden"
+      className="py-10 px-4 bg-slate-50 dark:bg-[#03030B] relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
@@ -34,7 +37,7 @@ const Prototypes = () => {
                     ease: "easeInOut",
                     delay: index * 0.5,
                   }}
-                  className="relative mx-auto w-full max-w-[280px] aspect-[9/19] rounded-[3rem] p-3 bg-black shadow-2xl border-[8px] border-[#1a1a1a] ring-1 ring-white/10 overflow-hidden"
+                  className="relative mx-auto w-full max-w-[280px] aspect-[9/19] rounded-[3rem] p-3 bg-black shadow-2xl border-[8px] border-[#1a1a1a] ring-1 ring-slate-200 dark:ring-white/10 overflow-hidden"
                 >
                   {/* Screen Content */}
                   <div className="w-full h-full rounded-[2.2rem] overflow-hidden relative bg-[#03030B]">

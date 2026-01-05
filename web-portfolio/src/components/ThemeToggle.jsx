@@ -1,3 +1,4 @@
+// External Libraries
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
@@ -16,8 +17,7 @@ const ThemeToggle = () => {
   // 2. Sync theme with document class and persist to localStorage
   useEffect(() => {
     const root = window.document.documentElement;
-    console.log("Theme changing to:", isDark ? "dark" : "light"); // Add this
-    console.log("Root classes:", root.classList); // Add this
+
     if (isDark) {
       root.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -49,7 +49,7 @@ const ThemeToggle = () => {
         </AnimatePresence>
 
         {/* Floating Tooltip */}
-        <div className="absolute right-full mr-4 px-3 py-1 bg-white dark:bg-[#181A20] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10">
+        <div className="absolute right-full mr-4 px-3 py-1 bg-white dark:bg-[#181A20] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-slate-200 dark:border-white/10">
           {/* 3. Updated logic: If it's dark, the button should say "Light Mode" because that's what happens on click */}
           {isDark ? "Light Mode" : "Dark Mode"}
         </div>
