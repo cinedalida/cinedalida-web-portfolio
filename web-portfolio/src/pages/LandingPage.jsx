@@ -182,7 +182,7 @@ const LandingPage = () => {
 
             <div className="max-w-3xl mx-auto">
               <p className={styles.section_text}>
-                hello there! I'm{" "}
+                Hello there! I'm{" "}
                 <strong className="text-white">
                   Francine Ysabel B. Dalida
                 </strong>

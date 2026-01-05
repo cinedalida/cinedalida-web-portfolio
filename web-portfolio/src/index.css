@@ -15,17 +15,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg-color: #f8fafc; /* Light mode background */
+  --text-color: #0f172a; /* Light mode text */
+
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Light Mode Defaults (When .dark class is NOT present) */
 html {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Dark Mode (When .dark class IS present) */
 html.dark {
-  background-color: #03030b;
-  color: #f8fafc;
+  --bg-color: #03030b;
+  --text-color: #f8fafc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
