@@ -25,6 +25,10 @@ import logoShadow from "../assets/main-logo-float.png";
 // Local Styles
 import "../css/landingPage.css";
 
+// TODO: Add animation for hero page and maybe make it a component?
+// TODO: add customization/personalization
+// TODO: Add picture? @about me section?
+
 const styles = {
   // Hero Section Styles
   section_hero: `h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-[#03030B] text-slate-900 dark:text-white text-center transition-colors duration-500`,

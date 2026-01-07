@@ -7,6 +7,9 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // Local Components/Constants
 import { STARTER_QUESTIONS } from "../constants";
 
+// TODO: Update for serverless function and deployment procedures
+// TODO: Improve system instructions for Gemini model, be more detailed
+
 const AiCine = () => {
   const [messages, setMessages] = useState([
     {
