@@ -35,6 +35,7 @@ html.dark {
   --text-color: #f8fafc;
 }
 
+/* TODO: Fix the glitchy transition on initial load of dark mode */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);

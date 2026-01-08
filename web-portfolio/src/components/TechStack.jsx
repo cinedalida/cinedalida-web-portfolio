@@ -4,12 +4,21 @@ import { motion, AnimatePresence } from "framer-motion";
 // Local Components/Constants
 import { TECH_STACK } from "../constants";
 
+/* TODO: Fix the glitchy Tech stack background */
+
+const styles = {
+  // tech
+  section_tech: `py-32 md:py-40 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative transition-colors duration-500`,
+  section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
+};
+
 const TechStack = () => {
   const [activeTab, setActiveTab] = useState(TECH_STACK[0].id);
   const activeCategory = TECH_STACK.find((cat) => cat.id === activeTab);
 
   return (
     <section id="tech" className="py-10 md:py-10 px-4">
+      <h2 className={styles.section_title}>tech.</h2>
       <div className="max-w-6xl mx-auto">
         {/* Category Tabs */}
         <div className="flex overflow-x-auto md:overflow-visible no-scrollbar pb-4 md:pb-0 md:justify-center gap-2 md:gap-4 mb-16 md:mb-24 px-2">
@@ -48,13 +57,13 @@ const TechStack = () => {
               transition={{ duration: 0.5, ease: "circOut" }}
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6"
             >
-              {activeCategory?.items.map((item) => {
+              {activeCategory?.items.map((item, index) => {
                 // Logic to handle the dynamic Icon component
                 const Icon = item.IconComponent;
 
                 return (
                   <motion.div
-                    key={item.name}
+                    key={`${activeTab}-${item.name}-${index}`}
                     whileHover={{ y: -8, scale: 1.05 }}
                     className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-[#181A20]/60 border border-slate-200 dark:border-white/5 rounded-[32px] transition-all duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
                   >
