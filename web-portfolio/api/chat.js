@@ -1,7 +1,8 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// TODO: Fix api call
+
+import { GoogleGenAI } from "@google/genai";
 
 export default async function handler(req, res) {
-  // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -11,15 +12,28 @@ export default async function handler(req, res) {
   const instructions = process.env.AI_INSTRUCTIONS;
 
   try {
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
-      systemInstruction: instructions.replace(/\\n/g, "\n"),
+    const ai = new GoogleGenAI({
+      apiKey,
     });
 
-    const result = await model.generateContent(message);
-    const response = await result.response;
-    const text = response.text();
+    const models = await ai.models.list();
+    console.log(
+      "AVAILABLE MODELS:",
+      models.models.map((m) => m.name)
+    );
+
+    const response = await ai.models.generateContent({
+      model: "gemini-1.5-flash",
+      systemInstruction: instructions?.replace(/\\n/g, "\n"),
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: message }],
+        },
+      ],
+    });
+
+    const text = response.text;
 
     return res.status(200).json({ text });
   } catch (error) {
