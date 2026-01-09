@@ -2,13 +2,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User, Sparkles } from "lucide-react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Local Components/Constants
 import { STARTER_QUESTIONS } from "../constants";
-
-// TODO: Update for serverless function and deployment procedures
-// TODO: Improve system instructions for Gemini model, be more detailed
 
 const AiCine = () => {
   const [messages, setMessages] = useState([
@@ -62,20 +58,20 @@ const AiCine = () => {
     setIsTyping(true);
 
     try {
-      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-        systemInstruction: import.meta.env.VITE_AI_INSTRUCTIONS,
+      // CALL SERVERLESS FUNCTION
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
       });
 
-      const result = await model.generateContent(userMessage);
-      const response = await result.response;
-      setMessages((prev) => [
-        ...prev,
-        { role: "cine", content: response.text() },
-      ]);
+      if (!res.ok) throw new Error("Failed to reach neural net");
+
+      const data = await res.json();
+
+      setMessages((prev) => [...prev, { role: "cine", content: data.text }]);
     } catch (err) {
-      console.error(err);
+      console.error("Connection Error:", err);
       setMessages((prev) => [
         ...prev,
         { role: "cine", content: "error connecting to my neural net." },
