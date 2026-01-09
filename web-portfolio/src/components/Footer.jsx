@@ -15,7 +15,7 @@ const Footer = () => {
               Hiraya Manawari.
             </h2>
             <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">
-              Francine Ysabel B. Dalida &copy; 2025
+              Francine Ysabel B. Dalida &copy; 2026
             </p>
           </div>
 

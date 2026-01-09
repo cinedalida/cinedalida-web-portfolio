@@ -1,11 +1,17 @@
+// Hooks
+import React, { useState, useEffect } from "react";
+
 // External Libraries
 import { motion } from "framer-motion";
 import { Download, Mail } from "lucide-react";
 import Aurora from "./animations/Aurora.jsx";
+
+// Local Assets
 import mainLogo from "../assets/main-logo.png";
 import logoShadow from "../assets/main-logo-float.png";
 
 // TODO: fix the aurora for light mode
+// TODO: fix the responsiveness of the hero section
 
 const styles = {
   section_hero: `relative h-screen flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0`,
@@ -16,7 +22,31 @@ const styles = {
   btn_secondary: `px-8 md:px-10 py-3.5 md:py-4 bg-transparent border-2 border-slate-300 dark:border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-600 dark:text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
 };
 
+// Track dark mode
 const Hero = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    document.documentElement.classList.contains("dark")
+  );
+
+  // Listen for changes in dark mode
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Palettes
+  const darkPalette = ["#0C1B53", "#4880C9", "#03030B"];
+  const lightPalette = ["#D1E4FF", "#A5B4FC", "#F8FAFC"];
+  // const lightPalette = ["#FFFFFF", "#FDFDFD", "#F8FAFC"];
+
   return (
     <section id="hero" className={styles.section_hero}>
       {/* BASE BACKGROUND LAYER (Lowest Z-index) */}
@@ -25,11 +55,10 @@ const Hero = () => {
       {/* AURORA LAYER (Middle Z-index) */}
       <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
         <Aurora
-          colorStops={["#0C1B53", "#4880C9", "#03030B"]}
-          // colorStops={["#00FF00", "#FF0000", "#0000FF"]}
-          amplitude={1.2}
-          blend={0.5}
-          speed={1.0}
+          colorStops={isDarkMode ? darkPalette : lightPalette}
+          amplitude={1.0}
+          blend={1}
+          speed={0.5}
         />
       </div>
 
