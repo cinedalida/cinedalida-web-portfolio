@@ -12,21 +12,46 @@ const styles = {
 };
 
 const AboutMe = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.15, // Sequential timing for each child
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="about" className={styles.section_about}>
+      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl aspect-square bg-[#4880C9]/5 blur-[120px] rounded-full -z-10" />
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         className={styles.about_container}
       >
-        <h2 className={styles.section_title}>about me.</h2>
+        <motion.h2 variants={itemVariants} className={styles.section_title}>
+          about me.
+        </motion.h2>
 
         <div className="max-w-3xl mx-auto">
-          <p className={styles.section_text}>
+          <motion.p variants={itemVariants} className={styles.section_text}>
             Hello there! I'm{" "}
             <strong className="text-slate-900 dark:text-white">
               Francine Ysabel B. Dalida
@@ -36,23 +61,32 @@ const AboutMe = () => {
               Cine
             </span>
             .
-          </p>
+          </motion.p>
 
-          <p className="text-slate-600 dark:text-[#D4D4D4] mb-8">
+          <motion.p
+            variants={itemVariants}
+            className="text-slate-600 dark:text-[#D4D4D4] mb-8"
+          >
             I am a third-year Computer Science student specializing in
             <span className="text-slate-900 dark:text-white block font-bold mt-2">
               Intelligent Systems at De La Salle University - Dasmariñas.
             </span>
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap justify-center mb-10">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap justify-center mb-10"
+          >
             <span className={styles.about_badge}>Full-Stack Dev</span>
             <span className={styles.about_badge}>Intelligent Systems</span>
             <span className={styles.about_badge}>Creative Artist</span>
             <span className={styles.about_badge}>Avid Reader</span>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center gap-2">
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center gap-2"
+          >
             <a
               href="https://www.facebook.com/ysabel.dalida.15"
               target="_blank"
@@ -74,7 +108,7 @@ const AboutMe = () => {
             >
               <Github className={styles.about_icon} size={32} />
             </a>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

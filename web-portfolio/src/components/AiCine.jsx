@@ -29,6 +29,28 @@ const AiCine = () => {
     }
   }, [messages, isTyping]);
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const messageVariants = {
+    hidden: { opacity: 0, y: 10, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+  };
+
   const handleSend = async (e, directMessage = null) => {
     e?.preventDefault();
     const messageToSend = directMessage || input;
@@ -68,19 +90,27 @@ const AiCine = () => {
       id="ai-cine"
       className="py-20 px-4 relative bg-slate-50 dark:bg-[#03030B] transition-colors duration-500"
     >
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="max-w-4xl mx-auto"
+      >
+        <motion.div variants={messageVariants} className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-4">
             ai cine.
           </h2>
           <p className="text-gray-400 font-medium uppercase tracking-widest text-xs">
             Simulate a conversation
           </p>
-        </div>
+        </motion.div>
 
-        <div className="glass-card rounded-[40px] border border-slate-200 dark:border-white/5 overflow-hidden shadow-2xl relative">
+        <motion.div
+          variants={messageVariants}
+          className="glass-card rounded-[40px] border border-slate-200 dark:border-white/5 overflow-hidden shadow-2xl relative"
+        >
           {/* Header */}
-
           <div className="px-6 py-4 border-b border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-white/5 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4880C9] to-indigo-600 flex items-center justify-center shadow-lg">
@@ -105,59 +135,69 @@ const AiCine = () => {
             ref={scrollRef}
             className="h-[400px] overflow-y-auto p-6 space-y-6 no-scrollbar"
           >
-            {messages.map((msg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`flex ${
-                  msg.role === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
-                <div
-                  className={`flex items-start gap-3 ${
-                    msg.role === "user" ? "flex-row-reverse" : ""
+            <AnimatePresence initial={false}>
+              {messages.map((msg, i) => (
+                <motion.div
+                  key={i}
+                  variants={messageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className={`flex ${
+                    msg.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
                   <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                      msg.role === "user"
-                        ? "bg-[#4880C9] text-white"
-                        : "bg-slate-200 dark:bg-white/10 text-[#4880C9]" // 🔴: Added bg-slate-200 for AI icon visibility
+                    className={`flex items-start gap-3 ${
+                      msg.role === "user" ? "flex-row-reverse" : ""
                     }`}
                   >
-                    {msg.role === "user" ? (
-                      <User size={14} />
-                    ) : (
-                      <Sparkles size={14} />
-                    )}
+                    <div
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+                        msg.role === "user"
+                          ? "bg-[#4880C9] text-white"
+                          : "bg-slate-200 dark:bg-white/10 text-[#4880C9]"
+                      }`}
+                    >
+                      {msg.role === "user" ? (
+                        <User size={14} />
+                      ) : (
+                        <Sparkles size={14} />
+                      )}
+                    </div>
+                    <div
+                      className={`p-4 rounded-2xl text-sm leading-relaxed ${
+                        msg.role === "user"
+                          ? "bg-[#4880C9] text-white rounded-tr-none shadow-md"
+                          : "bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-gray-200 border border-slate-200 dark:border-white/5 rounded-tl-none"
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
                   </div>
-                  <div
-                    className={`p-4 rounded-2xl text-sm leading-relaxed ${
-                      msg.role === "user"
-                        ? "bg-[#4880C9] text-white rounded-tr-none shadow-md" // 🔴: Swapped from white to brand blue for user bubbles in both modes
-                        : "bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-gray-200 border border-slate-200 dark:border-white/5 rounded-tl-none" // 🔴: Added slate-100 and slate-700 text for light mode
-                    }`}
-                  >
-                    {msg.content}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </AnimatePresence>
+
             {isTyping && (
-              <div className="flex justify-start">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex justify-start"
+              >
                 <div className="flex gap-1.5 px-4 py-3 bg-slate-100 dark:bg-white/5 rounded-full">
                   <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" />
                   <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]" />
                   <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:0.4s]" />
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
 
           {/* Input Area */}
-
-          <div className="px-6 py-4 flex flex-wrap gap-2 overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.02]">
+          <motion.div
+            variants={messageVariants}
+            className="px-6 py-4 flex flex-wrap gap-2 overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-white/5 bg-slate-50/50 dark:bg-white/[0.02]"
+          >
             {STARTER_QUESTIONS.map((q) => (
               <button
                 key={q.label}
@@ -168,8 +208,9 @@ const AiCine = () => {
                 {q.label}
               </button>
             ))}
-          </div>
-          <form
+          </motion.div>
+          <motion.form
+            variants={messageVariants}
             onSubmit={handleSend}
             className="p-6 bg-slate-50/50 dark:bg-white/5"
           >
@@ -188,12 +229,16 @@ const AiCine = () => {
                 <Send size={18} />
               </button>
             </div>
-          </form>
-        </div>
-        <p className="text-center mt-6 text-slate-500 dark:text-gray-600 text-[10px] uppercase font-bold tracking-[0.2em]">
+          </motion.form>
+        </motion.div>
+
+        <motion.p
+          variants={messageVariants}
+          className="text-center mt-6 text-slate-500 dark:text-gray-600 text-[10px] uppercase font-bold tracking-[0.2em]"
+        >
           Powered by Gemini 1.5 Flash
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </section>
   );
 };

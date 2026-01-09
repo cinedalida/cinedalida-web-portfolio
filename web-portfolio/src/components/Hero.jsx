@@ -18,13 +18,12 @@ const styles = {
   btn_hero: `group relative w-full sm:w-auto px-8 md:px-10 py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
   btn_secondary: `w-full sm:w-auto px-8 md:px-10 py-4 bg-transparent border-2 border-slate-300 dark:border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-600 dark:text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
 };
-// Track dark mode
+
 const Hero = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     document.documentElement.classList.contains("dark")
   );
 
-  // Listen for changes in dark mode
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -38,17 +37,33 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Palettes
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   const darkPalette = ["#0C1B53", "#4880C9", "#03030B"];
   const lightPalette = ["#D1E4FF", "#A5B4FC", "#F8FAFC"];
-  // const lightPalette = ["#FFFFFF", "#FDFDFD", "#F8FAFC"];
 
   return (
     <section id="hero" className={styles.section_hero}>
-      {/* BASE BACKGROUND LAYER (Lowest Z-index) */}
       <div className="absolute inset-0 bg-slate-50 dark:bg-[#03030B] -z-30 transition-colors duration-500" />
 
-      {/* AURORA LAYER (Middle Z-index) */}
       <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
         <Aurora
           colorStops={isDarkMode ? darkPalette : lightPalette}
@@ -58,9 +73,16 @@ const Hero = () => {
         />
       </div>
 
-      {/* CONTENT LAYER (Implicitly higher Z-index) */}
-      <div className="relative z-10">
-        <div className="relative flex items-center justify-center mb-12">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="relative flex items-center justify-center mb-12"
+        >
           {/* Shadow Logo */}
           <motion.img
             src={logoShadow}
@@ -90,21 +112,17 @@ const Hero = () => {
               ease: "easeInOut",
             }}
           />
-        </div>
+        </motion.div>
 
-        <motion.h1
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          className={styles.title}
-        >
+        <motion.h1 variants={itemVariants} className={styles.title}>
           Hiraya Manawari
         </motion.h1>
 
-        <p className={styles.subtitle}>
+        <motion.p variants={itemVariants} className={styles.subtitle}>
           Want an application that is both captivating and creative?
-        </p>
+        </motion.p>
 
-        <div className={styles.hero_buttons}>
+        <motion.div variants={itemVariants} className={styles.hero_buttons}>
           <a
             href="/Francine-Dalida-Resume2025.pdf"
             target="_blank"
@@ -130,8 +148,8 @@ const Hero = () => {
               Let's Talk
             </button>
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

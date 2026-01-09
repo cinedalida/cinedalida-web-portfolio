@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TECH_STACK } from "../constants";
 
 const styles = {
-  // tech
   section_tech: `py-32 md:py-40 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative transition-colors duration-500`,
   section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
 };
@@ -14,12 +13,50 @@ const TechStack = () => {
   const [activeTab, setActiveTab] = useState(TECH_STACK[0].id);
   const activeCategory = TECH_STACK.find((cat) => cat.id === activeTab);
 
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 20, opacity: 0, scale: 0.9 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 260, damping: 20 },
+    },
+  };
+
   return (
     <section id="tech" className={styles.section_tech}>
-      <h2 className={styles.section_title}>tech.</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className={styles.section_title}
+      >
+        tech.
+      </motion.h2>
+
       <div className="max-w-6xl mx-auto">
         {/* Category Tabs */}
-        <div className="flex overflow-x-auto md:overflow-visible no-scrollbar pb-4 md:pb-0 md:justify-center gap-2 md:gap-4 mb-16 md:mb-24 px-2">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex overflow-x-auto md:overflow-visible no-scrollbar pb-4 md:pb-0 md:justify-center gap-2 md:gap-4 mb-16 md:mb-24 px-2"
+        >
           {TECH_STACK.map((category) => (
             <button
               key={category.id}
@@ -42,32 +79,31 @@ const TechStack = () => {
               </span>
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Icons Grid Container */}
         <div className="relative w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, y: 30, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              transition={{ duration: 0.5, ease: "circOut" }}
+              variants={gridVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6"
             >
               {activeCategory?.items.map((item, index) => {
-                // Logic to handle the dynamic Icon component
                 const Icon = item.IconComponent;
 
                 return (
                   <motion.div
                     key={`${activeTab}-${item.name}-${index}`}
+                    variants={cardVariants}
                     whileHover={{ y: -8, scale: 1.05 }}
-                    className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-[#181A20]/60 border border-slate-200 dark:border-white/5 rounded-[32px] transition-all duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
+                    className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-[#181A20]/60 border border-slate-200 dark:border-white/5 rounded-[32px] transition-colors duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
                   >
                     {/* Icon Wrapper */}
                     <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 mb-3 md:mb-4 drop-shadow-2xl flex items-center justify-center">
-                      {/* Priority 1: React Icon Component */}
                       {Icon ? (
                         <Icon
                           size="100%"
@@ -75,7 +111,6 @@ const TechStack = () => {
                           className="filter brightness-90 group-hover:brightness-110 transition-all duration-500"
                         />
                       ) : (
-                        /* Priority 2: Fallback to standard Image */
                         <img
                           src={item.icon}
                           alt={item.name}
@@ -84,12 +119,10 @@ const TechStack = () => {
                       )}
                     </div>
 
-                    {/* Tech Name */}
                     <span className="text-[10px] md:text-xs font-black text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase tracking-widest text-center">
                       {item.name}
                     </span>
 
-                    {/* Hover Accent Line */}
                     <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 w-6 h-1 bg-slate-100 dark:bg-white/5 group-hover:bg-[#4880C9]/50 rounded-full transition-all duration-500 group-hover:w-10" />
                   </motion.div>
                 );

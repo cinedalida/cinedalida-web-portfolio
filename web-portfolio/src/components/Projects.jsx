@@ -12,6 +12,28 @@ import { PROJECTS } from "../constants";
 const Projects = () => {
   const appProjects = PROJECTS.filter((p) => p.category === "app-dev");
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.15, // Staggers the tags, title, description, and buttons
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       id="projects"
@@ -23,25 +45,32 @@ const Projects = () => {
             {appProjects.map((project) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
                 className="group glass-card rounded-3xl md:rounded-[40px] p-5 md:p-10 border border-slate-200 dark:border-white/5 flex flex-col lg:flex-row gap-8 md:gap-12 hover:border-[#4880C9]/30 transition-all duration-700 shadow-2xl"
               >
-                {/* Image Side */}
-                <div className="w-full lg:w-1/2 aspect-video lg:aspect-auto rounded-2xl md:rounded-[30px] overflow-hidden border border-slate-200 dark:border-white/10 relative h-auto lg:h-[400px]">
+                {/* Image Side - Refined Entrance */}
+                <motion.div
+                  variants={itemVariants}
+                  className="w-full lg:w-1/2 aspect-video lg:aspect-auto rounded-2xl md:rounded-[30px] overflow-hidden border border-slate-200 dark:border-white/10 relative self-stretch"
+                >
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#03030B]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
+                </motion.div>
 
-                {/* Content Side */}
+                {/* Content Side - Staggered Elements */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
-                  <div className="flex flex-wrap gap-2">
+                  {/* Tags */}
+                  <motion.div
+                    variants={itemVariants}
+                    className="flex flex-wrap gap-2"
+                  >
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -50,21 +79,34 @@ const Projects = () => {
                         {tag}
                       </span>
                     ))}
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none">
-                    {project.title}
-                  </h3>
+                  </motion.div>
 
-                  <div className="prose prose-slate max-w-none text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
+                  {/* Title */}
+                  <motion.h3
+                    variants={itemVariants}
+                    className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none"
+                  >
+                    {project.title}
+                  </motion.h3>
+
+                  {/* Description */}
+                  <motion.div
+                    variants={itemVariants}
+                    className="prose prose-slate max-w-none text-slate-600 dark:text-gray-400 text-base md:text-lg leading-relaxed"
+                  >
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       rehypePlugins={[rehypeRaw]}
                     >
                       {project.description}
                     </ReactMarkdown>
-                  </div>
+                  </motion.div>
 
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4">
+                  {/* Buttons */}
+                  <motion.div
+                    variants={itemVariants}
+                    className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4"
+                  >
                     <a
                       href={project.link}
                       target="_blank"
@@ -88,7 +130,7 @@ const Projects = () => {
                         </button>
                       </a>
                     )}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
