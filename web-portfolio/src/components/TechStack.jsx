@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 // Local Components/Constants
 import { TECH_STACK } from "../constants";
 
-/* TODO: Fix the glitchy Tech stack background */
-
 const styles = {
   // tech
   section_tech: `py-32 md:py-40 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative transition-colors duration-500`,
@@ -17,7 +15,7 @@ const TechStack = () => {
   const activeCategory = TECH_STACK.find((cat) => cat.id === activeTab);
 
   return (
-    <section id="tech" className="py-10 md:py-10 px-4">
+    <section id="tech" className={styles.section_tech}>
       <h2 className={styles.section_title}>tech.</h2>
       <div className="max-w-6xl mx-auto">
         {/* Category Tabs */}
