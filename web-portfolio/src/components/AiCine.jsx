@@ -47,40 +47,43 @@ const AiCine = () => {
     },
   };
 
-  const handleSend = async (e, directMessage = null) => {
-    e?.preventDefault();
-    const messageToSend = directMessage || input;
-    if (!messageToSend.trim() || isTyping) return;
+ const handleSend = async (e, directMessage = null) => {
+  e?.preventDefault();
+  const messageToSend = directMessage || input;
+  if (!messageToSend.trim() || isTyping) return;
 
-    const userMessage = messageToSend.trim();
-    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
-    setInput("");
-    setIsTyping(true);
+  const userMessage = messageToSend.trim();
+  
+  // Capture history BEFORE updating state to avoid async race conditions
+  const currentHistory = [...messages]; 
 
-    try {
-      // CALL SERVERLESS FUNCTION
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
-      });
+  setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+  setInput("");
+  setIsTyping(true);
 
-      if (!res.ok) throw new Error("Failed to reach neural net");
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ 
+        message: userMessage, 
+        history: currentHistory // Pass currentHistory here
+      }),
+    });
 
-      const data = await res.json();
-
-      setMessages((prev) => [...prev, { role: "cine", content: data.text }]);
-    } catch (err) {
-      console.error("Connection Error:", err);
-      setMessages((prev) => [
-        ...prev,
-        { role: "cine", content: "error connecting to my neural net." },
-      ]);
-    } finally {
-      setIsTyping(false);
-    }
-  };
-
+    if (!res.ok) throw new Error("Failed to reach neural net");
+    const data = await res.json();
+    setMessages((prev) => [...prev, { role: "cine", content: data.text }]);
+  } catch (err) {
+    console.error("Connection Error:", err);
+    setMessages((prev) => [
+      ...prev,
+      { role: "cine", content: "error connecting to my neural net." },
+    ]);
+  } finally {
+    setIsTyping(false);
+  }
+};
   return (
     <section
       id="ai-cine"

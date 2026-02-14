@@ -10,6 +10,11 @@ lerna-debug.log*
 node_modules/
 dist
 dist-ssr
+.env.local
+.env
+dist/
+build/
+.DS_Store
 *.local
 
 
@@ -27,3 +32,5 @@ dist-ssr
 
 
 .vercel
+
+
