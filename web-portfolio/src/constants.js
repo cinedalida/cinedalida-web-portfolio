@@ -190,7 +190,7 @@ La Spot provides a clear overview of parking availability and supports **vehicle
     hasFrontend: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "Product Landing Page",
     category: "app-dev",
     description:
@@ -204,7 +204,7 @@ La Spot provides a clear overview of parking availability and supports **vehicle
 
 export const PROTOTYPES = [
   {
-    id: 4,
+    id: 5,
     title: "Lauviah Prototype",
     description:
       "Your holistic companion for academic success and mental well-being.",
@@ -214,7 +214,7 @@ export const PROTOTYPES = [
     link: "https://www.figma.com/proto/klIQ3861jKHlXda8BUO2V3/Lauviah---Mobile?page-id=143%3A5147&node-id=152-10864&viewport=4146%2C4056%2C0.51&t=t4XOnQcG6YYauBed-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=143%3A5352&show-proto-sidebar=1",
   },
   {
-    id: 5,
+    id: 6,
     title: "Apo Kalinga Prototype",
     description:
       "An intuitive medication management application for senior citizens.",
@@ -224,7 +224,7 @@ export const PROTOTYPES = [
     link: "https://www.figma.com/proto/WtyqbvOixeUdWkEAjIJ2UG/Apo-Kalinga---Mobile?node-id=1-3203&t=Zu9LSYSNREf1HMAA-1",
   },
   {
-    id: 6,
+    id: 7,
     title: "Cha-Ching Prototype",
     description:
       "A user-friendly shopping application for a seamless retail experience.",
@@ -237,7 +237,7 @@ export const PROTOTYPES = [
 
 export const ARTS = [
   {
-    id: 7,
+    id: 8,
     title: "Art Portfolio",
     category: "arts-posters",
     description:
@@ -246,7 +246,7 @@ export const ARTS = [
     link: "https://www.canva.com/design/DAGqDxPSwAw/gH_ud84KudWeqiTK7YFcTQ/view?utm_content=DAGqDxPSwAw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7ddaf47cdc",
   },
   {
-    id: 8,
+    id: 9,
     title: "Artworks",
     category: "arts-posters",
     description:
@@ -255,7 +255,7 @@ export const ARTS = [
     link: "https://www.instagram.com/peamupbubbber/",
   },
   {
-    id: 9,
+    id: 10,
     title: "Posters",
     category: "arts-posters",
     description: "A compilation of my creative posters on Instagram.",
