@@ -28,7 +28,6 @@ const LandingPage = () => {
       <AboutMe />
       <TechStack />
       <ProjectManager />
-      <AiCine />
       <ThemeToggle />
       <Footer />
     </>

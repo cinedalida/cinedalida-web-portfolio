@@ -67,7 +67,7 @@ const AiCine = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 
         message: userMessage, 
-        history: currentHistory // Pass currentHistory here
+        history: currentHistory 
       }),
     });
 
