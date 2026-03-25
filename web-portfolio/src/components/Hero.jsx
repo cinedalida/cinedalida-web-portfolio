@@ -124,7 +124,7 @@ const Hero = () => {
 
         <motion.div variants={itemVariants} className={styles.hero_buttons}>
           <a
-            href="/Francine-Dalida-Resume2025.pdf"
+            href="/[DALIDA] Resume (2026).pdf"
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto"
