@@ -10,6 +10,13 @@ import {
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { VscAzure } from "react-icons/vsc";
 import { FaCss3Alt } from "react-icons/fa";
+import { SiGooglecolab } from "react-icons/si";
+import { SiJupyter } from "react-icons/si";
+import { SiAdobeaftereffects } from "react-icons/si";
+import { SiDavinciresolve } from "react-icons/si";
+import { SiNotion } from "react-icons/si";
+import { SiTrello } from "react-icons/si";
+
 
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
@@ -70,6 +77,16 @@ export const TECH_STACK = [
         IconComponent: VscAzure,
         color: "#0078D4",
       },
+      {
+        name: "Google Colab",
+        IconComponent: SiGooglecolab,
+        color: "#0078D4",
+      },
+      {
+        name: "Jupyter Notebook",
+        IconComponent: SiJupyter,
+        color: "#0078D4",
+      },
       // {
       //   name: "AWS",
       //   IconComponent: SiAmazonwebservices,
@@ -104,7 +121,8 @@ export const TECH_STACK = [
       },
       {
         name: "Notion",
-        icon: "https://cdn.simpleicons.org/notion/white",
+        IconComponent: SiNotion,
+        color: "#8B5CF6",
       },
       {
         name: "Discord",
@@ -113,6 +131,21 @@ export const TECH_STACK = [
       {
         name: "Filmora",
         icon: "https://cdn.simpleicons.org/wondersharefilmora/00D2D2",
+      },
+      {
+        name: "After Effects",
+        IconComponent: SiAdobeaftereffects,
+        color: "#9999FF",
+      },
+      {
+        name: "DaVinci Resolve",
+        IconComponent: SiDavinciresolve,
+        color: "#9999FF",
+      },
+      {
+        name: "Trello",
+        IconComponent: SiTrello,
+        color: "#0052CC",
       },
     ],
   },
