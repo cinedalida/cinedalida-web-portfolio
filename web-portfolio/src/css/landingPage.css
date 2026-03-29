@@ -10,15 +10,15 @@
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7); /* Light Mode */
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.85); /* Light Mode */
+  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.5s ease;
 }
 
 .dark .glass-card {
-  background: rgba(15, 23, 42, 0.6); /* Dark Mode */
+  background: rgba(15, 23, 42, 0.8); /* Dark Mode */
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -29,4 +29,33 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Optional: Add a fade to the edges so images don't just "cut off" */
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, var(--bg-color) 90%);
+  pointer-events: none;
+  z-index: -15;
+}
+
+.hero-mask {
+  /* This creates a smooth fade so the images disappear as they enter the next section */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }

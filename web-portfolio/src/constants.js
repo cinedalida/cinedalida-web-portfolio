@@ -70,11 +70,11 @@ export const TECH_STACK = [
         IconComponent: VscAzure,
         color: "#0078D4",
       },
-      {
-        name: "AWS",
-        IconComponent: SiAmazonwebservices,
-        color: "#FF9900", // Official AWS Orange
-      },
+      // {
+      //   name: "AWS",
+      //   IconComponent: SiAmazonwebservices,
+      //   color: "#FF9900", 
+      // },
     ],
   },
   {

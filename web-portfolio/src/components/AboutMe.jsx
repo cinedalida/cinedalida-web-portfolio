@@ -38,7 +38,7 @@ const AboutMe = () => {
   };
 
   return (
-    <section id="about" className={styles.section_about}>
+    <section id="about" className={`${styles.section_about} relative z-10`}>
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl aspect-square bg-[#4880C9]/5 blur-[120px] rounded-full -z-10" />
 
@@ -47,7 +47,7 @@ const AboutMe = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className={styles.about_container}
+        className={`${styles.about_container} relative z-20`}
       >
         <motion.h2 variants={itemVariants} className={styles.section_title}>
           Cine Dalida

@@ -11,7 +11,7 @@ import mainLogo from "../assets/main-logo.png";
 import logoShadow from "../assets/main-logo-float.png";
 
 const styles = {
-  section_hero: `relative min-h-screen flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0 px-6 py-20`,
+  section_hero: `relative min-h-[120vh] flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0 px-6 pt-10 pb-50`,
   title: `text-4xl sm:text-5xl md:text-6xl font-medium mb-4 text-slate-900 dark:text-white leading-tight`,
   subtitle: `text-lg sm:text-xl mb-8 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto`,
   hero_buttons: `flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 md:mt-12 w-full max-w-[280px] sm:max-w-none mx-auto`,
@@ -23,6 +23,13 @@ const Hero = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     document.documentElement.classList.contains("dark")
   );
+
+  const scrollImages = [
+    "CareerCove_proj.png",
+    "Laspot_proj.png",
+    "GameArtGal_proj.png",
+    "ProdLangPage_proj.png"
+  ];
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -62,7 +69,42 @@ const Hero = () => {
 
   return (
     <section id="hero" className={styles.section_hero}>
+      {/* Base Background Color */}
       <div className="absolute inset-0 bg-slate-50 dark:bg-[#03030B] -z-30 transition-colors duration-500" />
+      {/* Background Images Wrapper */}
+      <div 
+        className="absolute top-0 left-0 right-0 -bottom-32 -z-20 overflow-hidden opacity-40 pointer-events-none"
+        style={{
+        maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
+      }}
+      > 
+        <div className="flex w-[200%] h-full animate-scroll-left items-end pb-50 gap-8 px-4">
+          {/* Set of images */}
+          {scrollImages.map((img, i) => (
+            <img 
+              key={`scroll-1-${i}`} 
+              src={img} 
+              alt="" 
+          className="h-[250px] md:h-[350px] rounded-3xl object-cover shadow-2xl border border-white/10 transform translate-y-20" 
+            />
+          ))}
+          {/* Duplicate set for seamless looping */}
+          {scrollImages.map((img, i) => (
+            <img 
+              key={`scroll-2-${i}`} 
+              src={img} 
+              alt="" 
+          className="h-[250px] md:h-[350px] rounded-3xl object-cover shadow-2xl border border-white/10 transform translate-y-20" 
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Aurora Component */}
+      <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
+        <Aurora colorStops={isDarkMode ? darkPalette : lightPalette} amplitude={1.0} blend={1} speed={0.5} />
+      </div>
 
       <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
         <Aurora
@@ -87,7 +129,7 @@ const Hero = () => {
           <motion.img
             src={logoShadow}
             alt="Shadow"
-            className="absolute w-70 h-100 md:w-64 md:h-64 opacity-10 dark:opacity-40 blur-sm transition-opacity"
+            className="absolute w-48 h-48 md:w-64 md:h-64 opacity-10 dark:opacity-40 blur-sm transition-opacity"
             initial={{ scale: 0.85, y: 10, opacity: 0.4 }}
             animate={{ scale: 0.9, y: -10 }}
             transition={{
@@ -102,7 +144,7 @@ const Hero = () => {
           <motion.img
             src={mainLogo}
             alt="Main Logo"
-            className="relative z-10 w-100 h-100 md:w-64 md:h-64 drop-shadow-[0_0_20px_rgba(72,128,201,0.3)]"
+            className="relative z-10 w-48 h-48 md:w-64 md:h-64 drop-shadow-[0_0_20px_rgba(72,128,201,0.3)]"
             initial={{ scale: 1, y: -15 }}
             animate={{ scale: 1.05, y: 15 }}
             transition={{
