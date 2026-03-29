@@ -291,6 +291,16 @@ export const WORK_EXPERIENCE = [
       "Collaborated in hands-on learning sprints with 10+ EIF members on website UI/UX and data visualization.",
     ],
   },
+    {
+    company: "AWS User Group BuildHers+ Philippines",
+    role: "AmbassadHERS+ Operations Department - SheCodes",
+    period: "February 2026 - Present",
+    location: "Remote",
+    points: [
+      "Contributing to community-driven initiatives focused on empowering women in the AWS and cloud computing ecosystem.",
+      "Collaborating with the Tech and Development team to support operational workflows and technical projects.",
+    ],
+  },
   {
     company: "Edukasyon.ph",
     role: "Graphic Design Intern",
@@ -322,6 +332,15 @@ export const INVOLVEMENT = [
       "Leading overall council strategy, operations, and executive coordination.",
       "Developed automation tools like a dynamic event caption generator using n8n and Gemini AI.",
       "Representing the Computer Science student body in institutional meetings and decision-making.",
+    ],
+  },
+    {
+    org: "DLSUD - Computer Science Program Council (CSPC)",
+    role: "Vice Chief Executive Officer",
+    period: "June 2025 - November 2025",
+    points: [
+      "Managed internal operations for 50+ council members and designed efficient Trello/Discord workspaces.",
+      "Helped manage council events such as Panimola 2025, Specifi, and Organization Recruitment.",
     ],
   },
   {
