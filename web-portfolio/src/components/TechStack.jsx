@@ -6,7 +6,7 @@ import { TECH_STACK } from "../constants";
 
 const styles = {
   section_tech: `py-32 md:py-40 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative transition-colors duration-500`,
-  section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
+  section_title: `text-4xl md:text-5xl font-medium mb-10 text-slate-900 dark:text-white text-center w-full`,
 };
 
 const TechStack = () => {

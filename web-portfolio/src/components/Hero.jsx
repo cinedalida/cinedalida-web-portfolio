@@ -12,7 +12,7 @@ import logoShadow from "../assets/main-logo-float.png";
 
 const styles = {
   section_hero: `relative min-h-screen flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0 px-6 py-20`,
-  title: `text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-slate-900 dark:text-white leading-tight`,
+  title: `text-4xl sm:text-5xl md:text-6xl font-medium mb-4 text-slate-900 dark:text-white leading-tight`,
   subtitle: `text-lg sm:text-xl mb-8 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto`,
   hero_buttons: `flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 md:mt-12 w-full max-w-[280px] sm:max-w-none mx-auto`,
   btn_hero: `group relative w-full sm:w-auto px-8 md:px-10 py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
@@ -119,7 +119,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p variants={itemVariants} className={styles.subtitle}>
-          Want an application that is both captivating and creative?
+          A space where creativity meets intention, with curiosity as its compass.
         </motion.p>
 
         <motion.div variants={itemVariants} className={styles.hero_buttons}>

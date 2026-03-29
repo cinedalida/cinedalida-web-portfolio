@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Facebook, Linkedin, Github } from "lucide-react";
 
+// TO DO: Add Experience section: Work and Org
+// Add Certifications section
+
 const styles = {
   section_about: `py-32 md:py-80 px-4 md:px-10 bg-slate-50 dark:bg-[#03030B] text-center relative overflow-hidden transition-colors duration-500`,
-  section_title: `text-4xl md:text-5xl font-bold mb-10 text-slate-900 dark:text-white text-center w-full`,
+  section_title: `text-4xl md:text-5xl font-medium mb-10 text-slate-900 dark:text-white text-center w-full`,
   about_container: `max-w-5xl mx-auto text-center text-slate-600 dark:text-[#D4D4D4] leading-relaxed border border-slate-200 dark:border-white/5 p-8 md:p-16 rounded-[40px] shadow-2xl glow-blue glass-card relative z-10`,
   section_text: `mb-6 text-lg md:text-xl font-medium text-slate-700 dark:text-slate-200`,
   about_icon:
@@ -47,40 +50,31 @@ const AboutMe = () => {
         className={styles.about_container}
       >
         <motion.h2 variants={itemVariants} className={styles.section_title}>
-          about me.
+          Cine Dalida
         </motion.h2>
-
+        
         <div className="max-w-3xl mx-auto">
-          <motion.p variants={itemVariants} className={styles.section_text}>
-            Hello there! I'm{" "}
-            <strong className="text-slate-900 dark:text-white">
-              Francine Ysabel B. Dalida
-            </strong>
-            . You can call me{" "}
-            <span className="text-[#4880C9] font-black px-2 py-0.5 bg-[#4880C9]/10 rounded-lg">
-              Cine
-            </span>
-            .
-          </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="text-slate-600 dark:text-[#D4D4D4] mb-8"
           >
-            I am a third-year Computer Science student specializing in
-            <span className="text-slate-900 dark:text-white block font-bold mt-2">
-              Intelligent Systems at De La Salle University - Dasmariñas.
-            </span>
+            A Full-stack developer with a passion for data. I bridge design and technology to create intuitive, inclusive, human-centered digital experiences—projects that transcend barriers, solve problems, and empower users through thoughtful functionality.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap justify-center mb-10"
           >
-            <span className={styles.about_badge}>Full-Stack Dev</span>
+            <span className={styles.about_badge}>Caffeine-fueled workaholic</span>
+            <span className={styles.about_badge}>Project Management</span>
+            <span className={styles.about_badge}>Agile Leader</span>
             <span className={styles.about_badge}>Intelligent Systems</span>
-            <span className={styles.about_badge}>Creative Artist</span>
-            <span className={styles.about_badge}>Avid Reader</span>
+            <span className={styles.about_badge}>UI/UX</span>
+            <span className={styles.about_badge}>Automation</span>
+            <span className={styles.about_badge}>SQL</span>
+            <span className={styles.about_badge}>Python</span>
+            <span className={styles.about_badge}>ReactJS</span>
           </motion.div>
 
           <motion.div

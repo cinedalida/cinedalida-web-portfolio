@@ -44,7 +44,7 @@ const ProjectManager = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter mb-16 text-center"
+          className="text-4xl md:text-6xl font-black font-medium text-slate-900 dark:text-white tracking-tighter mb-16 text-center"
         >
           projects.
         </motion.h2>

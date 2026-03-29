@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { Eye } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -66,6 +67,14 @@ const Projects = () => {
 
                 {/* Content Side - Staggered Elements */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+                  {/* Title */}
+                  <motion.h3
+                    variants={itemVariants}
+                    className="text-3xl md:text-4xl font-black font-medium text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none"
+                  >
+                    {project.title}
+                  </motion.h3>
+
                   {/* Tags */}
                   <motion.div
                     variants={itemVariants}
@@ -80,14 +89,6 @@ const Projects = () => {
                       </span>
                     ))}
                   </motion.div>
-
-                  {/* Title */}
-                  <motion.h3
-                    variants={itemVariants}
-                    className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none"
-                  >
-                    {project.title}
-                  </motion.h3>
 
                   {/* Description */}
                   <motion.div
@@ -113,8 +114,8 @@ const Projects = () => {
                       rel="noreferrer"
                       className="w-full sm:w-auto"
                     >
-                      <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-2xl font-black text-sm hover:bg-[#4880C9] dark:hover:bg-[#4880C9] hover:text-white dark:hover:text-white border-2 border-transparent transition-all cursor-pointer active:scale-95 shadow-lg">
-                        View Github <Github size={18} />
+                      <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-slate-300 dark:border-white/20 text-slate-700 dark:text-white rounded-2xl font-black text-sm hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all cursor-pointer active:scale-95">
+                        Github <Github size={18} />
                       </button>
                     </a>
                     {project.hasFrontend && (
@@ -125,9 +126,23 @@ const Projects = () => {
                         className="w-full sm:w-auto"
                       >
                         <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-slate-300 dark:border-white/20 text-slate-700 dark:text-white rounded-2xl font-black text-sm hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all cursor-pointer active:scale-95">
-                          View Frontend
+                          Frontend
                           <ExternalLink size={18} />
                         </button>
+                      </a>
+                    )}
+                    {project.hasDemo && (
+                      <a
+                        href={project.demoLink || "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full sm:w-auto"
+                      >
+                        <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-slate-300 dark:border-white/20 text-slate-700 dark:text-white rounded-2xl font-black text-sm hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all cursor-pointer active:scale-95">
+                          Demo
+                          <Eye size={18} />
+                        </button>
+
                       </a>
                     )}
                   </motion.div>

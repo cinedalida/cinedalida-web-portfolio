@@ -12,6 +12,7 @@ import AiCine from "../components/AiCine.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import Hero from "../components/Hero.jsx";
 import AboutMe from "../components/AboutMe.jsx";
+import Experience from "../components/Experience.jsx";
 
 // Local Styles
 import "../css/landingPage.css";
@@ -26,6 +27,7 @@ const LandingPage = () => {
       <Navbar />
       <Hero />
       <AboutMe />
+      <Experience />
       <TechStack />
       <ProjectManager />
       <ThemeToggle />

@@ -14,6 +14,7 @@ import { FaCss3Alt } from "react-icons/fa";
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Tech", href: "#tech" },
   { label: "Projects", href: "#projects" },
 ];
@@ -120,7 +121,7 @@ export const TECH_STACK = [
 // Projects Categoies
 
 export const PROJECT_CATEGORIES = [
-  { id: "app-dev", label: "Application Dev" },
+  { id: "app-dev", label: "All Projects" },
   { id: "prototypes", label: "Prototypes" },
   { id: "arts-posters", label: "Arts & Posters" },
 ];
@@ -130,7 +131,7 @@ export const PROJECTS = [
   // Application Development
   {
     id: 1,
-    title: "CareerCove",
+    title: "CareerCove - Job Matching Platform",
     category: "app-dev",
     description: `**CareerCove** is a *web-based, skill-oriented job matching platform* for the computing industry that acts as a **middleman between job seekers and scraped job data** from *JobStreet, Indeed, and Kalibrr*.
 <br/>
@@ -157,6 +158,8 @@ It takes *scraped job postings* and a *parsed user resume* as inputs, then produ
     link: "https://github.com/cinedalida/CareerCove-frontend",
     hasFrontend: true,
     frontendLink: "https://careercove-six.vercel.app/",
+    hasDemo: true,
+    demoLink: "https://www.youtube.com/watch?v=x_MH1Pqrg3A",
   },
   {
     id: 2,
@@ -177,6 +180,8 @@ La Spot provides a clear overview of parking availability and supports **vehicle
     tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
     link: "https://github.com/cinedalida/La-Spot-Main",
     hasFrontend: false,
+    hasDemo: true,
+    demoLink: "https://www.youtube.com/watch?v=Kud7pHdQtlI",
   },
   {
     id: 3,
@@ -188,6 +193,8 @@ La Spot provides a clear overview of parking availability and supports **vehicle
     tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
     link: "https://github.com/cinedalida/Game-Themed-Landing-Page",
     hasFrontend: false,
+    hasDemo: true,
+    demoLink: "https://www.youtube.com/watch?v=iUzy_BJZXsA",
   },
   {
     id: 4,
@@ -269,4 +276,62 @@ export const STARTER_QUESTIONS = [
   { label: "Tell me about La Spot.", icon: "🚗" },
   { label: "Design or Code?", icon: "🎨" },
   { label: "Current CS projects?", icon: "💻" },
+];
+
+
+export const WORK_EXPERIENCE = [
+  {
+    company: "Eskwelabs",
+    role: "Education Innovation Fellowship (EIF) Intern",
+    period: "July 2025 - October 2025",
+    location: "Remote",
+    points: [
+      "Designed and built data pipeline prototypes automating Typeform survey data to Google Sheets using Google Apps Script and n8n.",
+      "Transformed data into organized tables for efficient access, supporting End of Sprint Analysis for Project Management.",
+      "Collaborated in hands-on learning sprints with 10+ EIF members on website UI/UX and data visualization.",
+    ],
+  },
+  {
+    company: "Edukasyon.ph",
+    role: "Graphic Design Intern",
+    period: "July 2025 - Present",
+    location: "Remote",
+    points: [
+      "Crafted over 15 bulk publications and assets for Admin and B2C projects using Canva, Adobe Photoshop, and Figma.",
+      "Codesigned campaigns such as EDK Club Time and Wikasaysayan with the Brand Manager and 10+ team members.",
+    ],
+  },
+  {
+    company: "DLSU-D Registrar's Office",
+    role: "Student Assistant",
+    period: "September 2025 - Present",
+    location: "Dasmariñas, Cavite",
+    points: [
+      "Completed 136+ office duty hours supporting enrollment, registration, and general registrar transactions.",
+      "Encoded over 100 student application files, ensuring accurate record-keeping and efficient processing.",
+    ],
+  },
+];
+
+export const INVOLVEMENT = [
+  {
+    org: "DLSUD - Computer Science Program Council (CSPC)",
+    role: "Chief Executive Officer",
+    period: "November 2025 - Present",
+    points: [
+      "Leading overall council strategy, operations, and executive coordination.",
+      "Developed automation tools like a dynamic event caption generator using n8n and Gemini AI.",
+      "Representing the Computer Science student body in institutional meetings and decision-making.",
+    ],
+  },
+  {
+    org: "DLSU-D Computer Science Program Council (CSPC)",
+    role: "Multimedia Committee Head",
+    period: "September 2024 - May 2025",
+    points: [
+      "Led over 15 creative members to design promotional materials and visual collaterals for council events and projects.",
+      "Managed social media content and created visual assets for major events including Interdepartmental Sportsfest and Codeyssey.",
+      "Produced creative assets for organizational initiatives such as Back to Basics: RobotiCS 101 and various holiday publications.",
+    ],
+  },
 ];

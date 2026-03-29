@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="fixed top-6 left-6 z-[60] md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          /* FIX: Added bg-white and dark: variant. Added text-slate-900 for light mode. */
+
           className="w-12 h-12 bg-white/80 dark:bg-[#0C1B53]/80 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-2xl flex items-center justify-center shadow-lg text-slate-900 dark:text-white transition-colors"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,10 +77,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Central Logo Icon */}
-          <div className="w-10 h-10 bg-[#4880C9] rounded-full flex items-center justify-center shadow-lg text-white">
-            <Code2 size={20} />
-          </div>
+
 
           {/* Second half of links */}
           <div className="flex items-center gap-10">
