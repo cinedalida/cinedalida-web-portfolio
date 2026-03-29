@@ -120,7 +120,7 @@ export const TECH_STACK = [
 // Projects Categoies
 
 export const PROJECT_CATEGORIES = [
-  { id: "app-dev", label: "Application Dev" },
+  { id: "app-dev", label: "All Projects" },
   { id: "prototypes", label: "Prototypes" },
   { id: "arts-posters", label: "Arts & Posters" },
 ];
@@ -130,7 +130,7 @@ export const PROJECTS = [
   // Application Development
   {
     id: 1,
-    title: "CareerCove",
+    title: "CareerCove - Job Matching Platform",
     category: "app-dev",
     description: `**CareerCove** is a *web-based, skill-oriented job matching platform* for the computing industry that acts as a **middleman between job seekers and scraped job data** from *JobStreet, Indeed, and Kalibrr*.
 <br/>

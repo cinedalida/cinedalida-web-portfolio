@@ -66,6 +66,16 @@ const Projects = () => {
 
                 {/* Content Side - Staggered Elements */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+                  {/* Title */}
+                  <motion.h3
+                    variants={itemVariants}
+                    className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none"
+                  >
+                    {project.title}
+                  </motion.h3>
+
+                  
+                  
                   {/* Tags */}
                   <motion.div
                     variants={itemVariants}
@@ -81,13 +91,6 @@ const Projects = () => {
                     ))}
                   </motion.div>
 
-                  {/* Title */}
-                  <motion.h3
-                    variants={itemVariants}
-                    className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight md:leading-none"
-                  >
-                    {project.title}
-                  </motion.h3>
 
                   {/* Description */}
                   <motion.div
