@@ -1,5 +1,5 @@
 // Hooks
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 
 // External Libraries
 import { motion } from "framer-motion";
@@ -11,27 +11,30 @@ import mainLogo from "../assets/main-logo.png";
 import logoShadow from "../assets/main-logo-float.png";
 
 const styles = {
-  section_hero: `relative min-h-[120vh] flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0 px-6 pt-10 pb-50`,
+  section_hero: `relative min-h-[120vh] flex flex-col items-center justify-center text-slate-900 dark:text-white text-center transition-colors duration-500 overflow-hidden z-0 px-6 pt-10 pb-30`,
   title: `text-4xl sm:text-5xl md:text-6xl font-medium mb-4 text-slate-900 dark:text-white leading-tight`,
   subtitle: `text-lg sm:text-xl mb-8 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto`,
   hero_buttons: `flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 md:mt-12 w-full max-w-[280px] sm:max-w-none mx-auto`,
   btn_hero: `group relative w-full sm:w-auto px-8 md:px-10 py-4 bg-[#4880C9] text-white rounded-2xl md:rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_5px_rgba(72,128,201,0.6)] shadow-xl`,
-  btn_secondary: `w-full sm:w-auto px-8 md:px-10 py-4 bg-transparent border-2 border-slate-300 dark:border-slate-800 rounded-2xl md:rounded-full font-bold text-slate-600 dark:text-slate-300 hover:border-[#4880C9] hover:text-[#4880C9] hover:bg-[#4880C9]/5 transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_2px_rgba(72,128,201,0.3)]`,
+  btn_secondary: `group relative w-full sm:w-auto px-8 md:px-10 py-4 
+bg-[#4880C9] 
+border-2 border-[#4880C9] 
+rounded-2xl md:rounded-full font-bold 
+text-white 
+overflow-hidden transition-all 
+hover:scale-105 active:scale-95 
+hover:shadow-[0_0_20px_5px_rgba(72,128,201,0.5)] 
+flex items-center justify-center gap-2`,
 };
 
 const Hero = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    document.documentElement.classList.contains("dark")
-  );
-
-  const scrollImages = [
-    "CareerCove_proj.png",
-    "Laspot_proj.png",
-    "GameArtGal_proj.png",
-    "ProdLangPage_proj.png"
-  ];
-
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [enableAurora, setEnableAurora] = useState(true);
+  // State to track if dark mode is active
+  // Note: // Safely detects and tracks dark mode by checking the <html> class after mount and observing changes in real time
   useEffect(() => {
+    setIsDarkMode(document.documentElement.classList.contains("dark"));
+
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.documentElement.classList.contains("dark"));
     });
@@ -42,7 +45,20 @@ const Hero = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+},[]);
+
+  useEffect(() => {
+    if (window.innerWidth <768){
+      setEnableAurora(false);
+    }
+  },[]);
+  
+  const scrollImages = [
+    "CareerCove_proj.png",
+    "Laspot_proj.png",
+    "GameArtGal_proj.png",
+    "ProdLangPage_proj.png"
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,7 +85,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className={styles.section_hero}>
-      {/* Base Background Color */}
+      {/* Base Background */}
       <div className="absolute inset-0 bg-slate-50 dark:bg-[#03030B] -z-30 transition-colors duration-500" />
       {/* Background Images Wrapper */}
       <div 
@@ -103,16 +119,14 @@ const Hero = () => {
 
       {/* Aurora Component */}
       <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
-        <Aurora colorStops={isDarkMode ? darkPalette : lightPalette} amplitude={1.0} blend={1} speed={0.5} />
-      </div>
-
-      <div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
-        <Aurora
+        {enableAurora && (
+          <Aurora
           colorStops={isDarkMode ? darkPalette : lightPalette}
-          amplitude={1.0}
-          blend={1}
-          speed={0.5}
+          amplitude={0.5}
+          blend={0.5}
+          speed={0.2}
         />
+        )}
       </div>
 
       <motion.div
