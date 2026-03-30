@@ -56,7 +56,38 @@
   z-index: -15;
 }
 
-/* .hero-mask {
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-} */
+.hero-mesh-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -10;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+/* Light Mode Mesh */
+.hero-mesh-gradient {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(214, 100%, 91%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(231, 93%, 82%, 1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(214, 100%, 95%, 1) 0px, transparent 50%);
+}
+
+/* Dark Mode Mesh */
+.dark .hero-mesh-gradient {
+  background-color: #03030b;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(226, 75%, 19%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(214, 54%, 54%, 0.3) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(226, 75%, 10%, 1) 0px, transparent 50%);
+}
+
+@keyframes mesh-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-mesh {
+  animation: mesh-pulse 10s ease-in-out infinite;
+}

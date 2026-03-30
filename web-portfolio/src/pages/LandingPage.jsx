@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import TechStack from "../components/TechStack.jsx";
 import ProjectManager from "../components/ProjectManager.jsx";
-import AiCine from "../components/AiCine.jsx";
+// import AiCine from "../components/AiCine.jsx"; (to be implemented)
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import Hero from "../components/Hero.jsx";
 import AboutMe from "../components/AboutMe.jsx";
@@ -16,10 +16,6 @@ import Experience from "../components/Experience.jsx";
 
 // Local Styles
 import "../css/landingPage.css";
-
-export const APP_PROJECT_CATEGORIES = [
-  { id: "app-dev", label: "Application Dev" },
-];
 
 const LandingPage = () => {
   return (
@@ -30,7 +26,6 @@ const LandingPage = () => {
       <Experience />
       <TechStack />
       <ProjectManager />
-      <ThemeToggle />
       <Footer />
     </>
   );
