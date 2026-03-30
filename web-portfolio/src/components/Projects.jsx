@@ -49,17 +49,19 @@ const Projects = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
                 className="group glass-card rounded-3xl md:rounded-[40px] p-5 md:p-10 border border-slate-200 dark:border-white/5 flex flex-col lg:flex-row gap-8 md:gap-12 hover:border-[#4880C9]/30 transition-all duration-700 shadow-2xl"
               >
                 {/* Image Side - Refined Entrance */}
                 <motion.div
                   variants={itemVariants}
                   className="w-full lg:w-1/2 aspect-video lg:aspect-auto rounded-2xl md:rounded-[30px] overflow-hidden border border-slate-200 dark:border-white/10 relative self-stretch"
+                  style={{ willChange: "transform" }}
                 >
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#03030B]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

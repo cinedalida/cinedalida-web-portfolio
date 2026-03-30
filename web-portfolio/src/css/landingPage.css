@@ -41,10 +41,12 @@
 }
 
 .animate-scroll-left {
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 80s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
-/* Optional: Add a fade to the edges so images don't just "cut off" */
+/* fade to the edges so images don't just "cut off" */
 #hero::after {
   content: "";
   position: absolute;
@@ -54,8 +56,7 @@
   z-index: -15;
 }
 
-.hero-mask {
-  /* This creates a smooth fade so the images disappear as they enter the next section */
+/* .hero-mask {
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-}
+} */

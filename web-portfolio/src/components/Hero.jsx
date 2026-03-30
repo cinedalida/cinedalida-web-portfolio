@@ -29,26 +29,29 @@ flex items-center justify-center gap-2`,
 
 const Hero = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [enableAurora, setEnableAurora] = useState(true);
-  // State to track if dark mode is active
-  // Note: // Safely detects and tracks dark mode by checking the <html> class after mount and observing changes in real time
+  const [enableAurora, setEnableAurora] = useState(false);
+
   useEffect(() => {
+  const observer = new MutationObserver(() => {
     setIsDarkMode(document.documentElement.classList.contains("dark"));
+  });
 
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.documentElement.classList.contains("dark"));
-    });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
+  setIsDarkMode(document.documentElement.classList.contains("dark"));
 
-    return () => observer.disconnect();
-},[]);
+  return () => observer.disconnect();
+}, []);
 
   useEffect(() => {
-    if (window.innerWidth <768){
+    const isLowEnd = 
+      window.innerWidth < 1024 ||
+      (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+
+    if (isLowEnd) {
       setEnableAurora(false);
     }
   },[]);
@@ -90,30 +93,20 @@ const Hero = () => {
       {/* Background Images Wrapper */}
       <div 
         className="absolute top-0 left-0 right-0 -bottom-32 -z-20 overflow-hidden opacity-40 pointer-events-none"
-        style={{
-        maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
-      }}
       > 
-        <div className="flex w-[200%] h-full animate-scroll-left items-end pb-50 gap-8 px-4">
+        <div className="flex w-[200] h-full animate-scroll-left items-end pb-40 gap-8 px-4">
           {/* Set of images */}
-          {scrollImages.map((img, i) => (
-            <img 
-              key={`scroll-1-${i}`} 
-              src={img} 
-              alt="" 
-          className="h-[250px] md:h-[350px] rounded-3xl object-cover shadow-2xl border border-white/10 transform translate-y-20" 
+          {[...scrollImages, ...scrollImages].map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt=""
+              loading="lazy"
+              style={{ willChange: "transform" }}
+              className="h-[220px] md:h-[300px] rounded-2xl object-cover shadow-md transform translate-y-20"
             />
           ))}
-          {/* Duplicate set for seamless looping */}
-          {scrollImages.map((img, i) => (
-            <img 
-              key={`scroll-2-${i}`} 
-              src={img} 
-              alt="" 
-          className="h-[250px] md:h-[350px] rounded-3xl object-cover shadow-2xl border border-white/10 transform translate-y-20" 
-            />
-          ))}
+
         </div>
       </div>
 
@@ -143,12 +136,12 @@ const Hero = () => {
           <motion.img
             src={logoShadow}
             alt="Shadow"
-            className="absolute w-48 h-48 md:w-64 md:h-64 opacity-10 dark:opacity-40 blur-sm transition-opacity"
+            className="absolute w-48 h-48 md:w-64 md:h-64 opacity-20 dark:opacity-40 blur-sm transition-opacity"
             initial={{ scale: 0.85, y: 10, opacity: 0.4 }}
             animate={{ scale: 0.9, y: -10 }}
             transition={{
               duration: 6,
-              repeat: Infinity,
+              repeat: 2,
               repeatType: "mirror",
               ease: "easeInOut",
             }}
