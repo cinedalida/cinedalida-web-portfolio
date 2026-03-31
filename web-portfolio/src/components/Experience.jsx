@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase, Users, Calendar, MapPin } from "lucide-react";
 import { WORK_EXPERIENCE, INVOLVEMENT } from "../constants";
+import { Eye } from "lucide-react";
 
 const styles = {
   section_experience: `py-24 md:py-32 px-6 md:px-10 bg-slate-50 dark:bg-[#03030B] relative transition-colors duration-500`,
@@ -78,6 +79,22 @@ const Experience = () => {
                   <li key={i} className={styles.bullet_point}>{point}</li>
                 ))}
               </ul>
+              {/* demo button */}
+              {exp.demoLink && exp.demoLink &&(
+                <div className="mt-6">
+                  <a
+                    href={exp.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <button className="w-[200px] flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-slate-300 dark:border-white/20 text-slate-700 dark:text-white rounded-2xl font-black text-sm hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all cursor-pointer active:scale-95">
+                      View
+                      <Eye size={18} />
+                    </button>
+                  </a>              
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -103,6 +120,8 @@ const Experience = () => {
                   {inv.period}
                 </div>
               </div>
+
+
               <ul className="space-y-2">
                 {inv.points.map((point, i) => (
                   <li key={i} className={styles.bullet_point}>{point}</li>
@@ -110,8 +129,10 @@ const Experience = () => {
               </ul>
             </motion.div>
           ))}
+  
         </div>
       </motion.div>
+      
     </section>
   );
 };

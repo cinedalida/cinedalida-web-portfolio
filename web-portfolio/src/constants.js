@@ -319,10 +319,12 @@ export const WORK_EXPERIENCE = [
     period: "July 2025 - October 2025",
     location: "Remote",
     points: [
-      "Designed and built data pipeline prototypes automating Typeform survey data to Google Sheets using Google Apps Script and n8n.",
-      "Transformed data into organized tables for efficient access, supporting End of Sprint Analysis for Project Management.",
-      "Collaborated in hands-on learning sprints with 10+ EIF members on website UI/UX and data visualization.",
+      "Designed and developed data pipeline prototypes to automate the ingestion and consolidation of Typeform survey data into Google Sheets using Google Apps Script. Built a centralized “mega-database” that aggregates sprint-based survey responses via the Typeform API, transforming raw data into structured, analysis-ready tables for Operations Management’s End-of-Sprint Analysis.",
+      "Implemented key system features including automated survey processing that dynamically updates incoming data without duplication, system logging for real-time processing visibility, and configurable settings for managing API tokens. This automation significantly reduced manual data handling and improved data accessibility for the Project Management team.",
+      "Additionally, collaborated in hands-on learning sprints focused on UI/UX design, data visualization, project management, and Generative AI, including prompt engineering.",
     ],
+    hasDemo: true,
+    demoLink: "https://www.youtube.com/watch?v=bEuV2Z2dS3c",
   },
     {
     company: "AWS User Group BuildHers+ Philippines",
@@ -331,7 +333,7 @@ export const WORK_EXPERIENCE = [
     location: "Remote",
     points: [
       "Contributing to community-driven initiatives focused on empowering women in the AWS and cloud computing ecosystem.",
-      "Collaborating with the Tech and Development team to support operational workflows and technical projects.",
+      "Collaborating with the Tech and Development team to support operational workflows such event presentations and technical projects.",
     ],
   },
   {
@@ -340,9 +342,11 @@ export const WORK_EXPERIENCE = [
     period: "July 2025 - Present",
     location: "Remote",
     points: [
-      "Crafted over 15 bulk publications and assets for Admin and B2C projects using Canva, Adobe Photoshop, and Figma.",
-      "Codesigned campaigns such as EDK Club Time and Wikasaysayan with the Brand Manager and 10+ team members.",
+      "Led the design and production of 20+ publications and digital assets for Admin and B2C campaigns using Canva, Adobe Photoshop, and Figma.",
+      "Delivered visually cohesive content for initiatives including EDK Club Time, Wikasaysayan, Barirala Bites, and Women’s Month, strengthening brand identity and enhancing audience engagement across social media platforms.",
     ],
+    hasDemo: true,
+    demoLink: "https://canva.link/89tgjsls7cw4ngb",
   },
   {
     company: "DLSU-D Registrar's Office",
@@ -350,8 +354,8 @@ export const WORK_EXPERIENCE = [
     period: "September 2025 - Present",
     location: "Dasmariñas, Cavite",
     points: [
-      "Completed 136+ office duty hours supporting enrollment, registration, and general registrar transactions.",
-      "Encoded over 100 student application files, ensuring accurate record-keeping and efficient processing.",
+      "Completed 136+ office duty hours, supporting enrollment, registration, and general administrative transactions. ",
+      "Accurately sorted and encoded 100+ student application records, contributing to efficient data management and processing for the Student Financial Aid Grant (SFAG) and Department of Labor and Employment SPES program. Recognized for delivering highly productive and reliable work.",
     ],
   },
 ];
@@ -362,18 +366,9 @@ export const INVOLVEMENT = [
     role: "Chief Executive Officer",
     period: "November 2025 - Present",
     points: [
-      "Leading overall council strategy, operations, and executive coordination.",
-      "Developed automation tools like a dynamic event caption generator using n8n and Gemini AI.",
-      "Representing the Computer Science student body in institutional meetings and decision-making.",
-    ],
-  },
-    {
-    org: "DLSUD - Computer Science Program Council (CSPC)",
-    role: "Vice Chief Executive Officer",
-    period: "June 2025 - November 2025",
-    points: [
-      "Managed internal operations for 50+ council members and designed efficient Trello/Discord workspaces.",
-      "Helped manage council events such as Panimola 2025, Specifi, and Organization Recruitment.",
+      "Directed council strategy, marketing, and operations for 50+ members following promotion from Vice President. ",
+      "Engineered automation prototypes using n8n and Google Gemini to accelerate social media content creation, and streamlined team coordination via Discord and Trello. ",
+      "Optimized internal workflows via Discord and Trello, improving organizational efficiency for major events like Coding Competitions, Merchandise Selling, Panimola 2025, Robotics, and Recruitment.",
     ],
   },
   {
@@ -383,7 +378,7 @@ export const INVOLVEMENT = [
     points: [
       "Led over 15 creative members to design promotional materials and visual collaterals for council events and projects.",
       "Managed social media content and created visual assets for major events including Interdepartmental Sportsfest and Codeyssey.",
-      "Produced creative assets for organizational initiatives such as Back to Basics: RobotiCS 101 and various holiday publications.",
+      "Produced creative assets for organizational initiatives such as Back to Basics: RobotiCS 101, Codeyssey, and various holiday publications.",
     ],
   },
 ];
