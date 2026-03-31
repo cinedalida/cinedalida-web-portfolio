@@ -4,7 +4,7 @@ import {
   SiPostgresql,
   SiDocker,
   SiAseprite,
-  SiAmazonwebservices,
+  // SiAmazonwebservices,
 } from "react-icons/si";
 
 import { BiLogoVisualStudio } from "react-icons/bi";
