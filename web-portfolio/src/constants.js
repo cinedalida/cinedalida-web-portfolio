@@ -211,7 +211,7 @@ La Spot provides a clear overview of parking availability and supports **vehicle
   `,
     image: "Laspot_proj.png",
     tags: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MySQL"],
-    link: "https://github.com/cinedalida/La-Spot-Main",
+    link: "https://github.com/KMarttt/La-Spot-Main",
     hasFrontend: false,
     hasDemo: true,
     demoLink: "https://www.youtube.com/watch?v=Kud7pHdQtlI",
