@@ -319,9 +319,9 @@ export const WORK_EXPERIENCE = [
     period: "July 2025 - October 2025",
     location: "Remote",
     points: [
-      "Designed and developed data pipeline prototypes to automate the ingestion and consolidation of Typeform survey data into Google Sheets using Google Apps Script. Built a centralized “mega-database” that aggregates sprint-based survey responses via the Typeform API, transforming raw data into structured, analysis-ready tables for Operations Management’s End-of-Sprint Analysis.",
-      "Implemented key system features including automated survey processing that dynamically updates incoming data without duplication, system logging for real-time processing visibility, and configurable settings for managing API tokens. This automation significantly reduced manual data handling and improved data accessibility for the Project Management team.",
-      "Additionally, collaborated in hands-on learning sprints focused on UI/UX design, data visualization, project management, and Generative AI, including prompt engineering.",
+      "Built automated data pipelines using Google Apps Script to integrate Typeform data into Google Sheets, creating a centralized analysis-ready database.",
+      "Implemented deduplication, logging, and API configuration features, reducing manual work and improving data accessibility.",
+      "Gained experience in UI/UX, data visualization, project management, and Generative AI.",
     ],
     hasDemo: true,
     demoLink: "https://www.youtube.com/watch?v=bEuV2Z2dS3c",
