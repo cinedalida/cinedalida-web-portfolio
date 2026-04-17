@@ -17,7 +17,6 @@ import { SiDavinciresolve } from "react-icons/si";
 import { SiNotion } from "react-icons/si";
 import { SiTrello } from "react-icons/si";
 
-
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
@@ -90,7 +89,7 @@ export const TECH_STACK = [
       // {
       //   name: "AWS",
       //   IconComponent: SiAmazonwebservices,
-      //   color: "#FF9900", 
+      //   color: "#FF9900",
       // },
     ],
   },
@@ -169,14 +168,7 @@ export const PROJECTS = [
     description: `**CareerCove** is a *web-based, skill-oriented job matching platform* for the computing industry that acts as a **middleman between job seekers and scraped job data** from *JobStreet, Indeed, and Kalibrr*.
 <br/>
 <br/>
-It takes *scraped job postings* and a *parsed user resume* as inputs, then produces **personalized job recommendations** using **Named Entity Recognition (NER)** and **semantic similarity search**.
-<br/>
-<br/>
-**Key Features:**
-- *Customizable Career Filters*
-- *Data Analytics Dashboards*
-- *Job Bookmarking and Application Tracking System*
-- *Secure Document Repository*`,
+It takes scraped job postings and a parsed user resume as inputs, then produces personalized job recommendations using **Named Entity Recognition (NER)** and **semantic similarity search.**`,
     image: "CareerCove_proj.png",
     tags: [
       "Python",
@@ -200,13 +192,7 @@ It takes *scraped job postings* and a *parsed user resume* as inputs, then produ
     category: "app-dev",
     description: `
 **La Spot** is a *web-based parking system* developed for **De La Salle University – Dasmariñas**. It was built as a *final project for the Application Development course* to improve parking management on campus.
-<br/>
-<br/>
-The system has two parts:<br/>
-**User Side** – allows students and staff to view available parking slots  
-**Admin Side** – enables administrators to manage parking data using **CRUD operations**
-<br/>
-<br/>
+
 La Spot provides a clear overview of parking availability and supports **vehicle management**, **parking slot registration**, and **account control** through a *responsive web interface*.
   `,
     image: "Laspot_proj.png",
@@ -311,7 +297,6 @@ export const STARTER_QUESTIONS = [
   { label: "Current CS projects?", icon: "💻" },
 ];
 
-
 export const WORK_EXPERIENCE = [
   {
     company: "Eskwelabs",
@@ -326,7 +311,7 @@ export const WORK_EXPERIENCE = [
     hasDemo: true,
     demoLink: "https://www.youtube.com/watch?v=bEuV2Z2dS3c",
   },
-    {
+  {
     company: "AWS User Group BuildHers+ Philippines",
     role: "AmbassadHERS+ Operations Department - SheCodes",
     period: "February 2026 - Present",
