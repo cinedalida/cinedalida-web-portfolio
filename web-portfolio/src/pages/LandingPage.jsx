@@ -13,6 +13,8 @@ import ThemeToggle from "../components/ThemeToggle.jsx";
 import Hero from "../components/Hero.jsx";
 import AboutMe from "../components/AboutMe.jsx";
 import Experience from "../components/Experience.jsx";
+import Certifications from "../components/Certifications.jsx";
+import ContactMe from "../components/ContactMe.jsx";
 
 // Local Styles
 import "../css/landingPage.css";
@@ -24,8 +26,10 @@ const LandingPage = () => {
       <Hero />
       <AboutMe />
       <Experience />
+      <Certifications />
       <TechStack />
       <ProjectManager />
+      {/* <ContactMe /> */}
       <Footer />
     </>
   );

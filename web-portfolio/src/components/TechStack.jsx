@@ -1,7 +1,5 @@
-// External Libraries
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// Local Components/Constants
 import { TECH_STACK } from "../constants";
 
 const styles = {
@@ -90,7 +88,7 @@ const TechStack = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6"
+              className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3 md:gap-4" // Adjusted grid columns and gap
             >
               {activeCategory?.items.map((item, index) => {
                 const Icon = item.IconComponent;
@@ -100,10 +98,11 @@ const TechStack = () => {
                     key={`${activeTab}-${item.name}-${index}`}
                     variants={cardVariants}
                     whileHover={{ y: -8, scale: 1.05 }}
-                    className="group relative flex flex-col items-center justify-center p-6 md:p-8 bg-white dark:bg-[#181A20]/60 border border-slate-200 dark:border-white/5 rounded-[32px] transition-colors duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl"
+                    className="group relative flex flex-col items-center justify-center p-4 md:p-5 bg-white dark:bg-[#181A20]/60 border border-slate-200 dark:border-white/5 rounded-[24px] transition-colors duration-500 hover:border-[#4880C9]/30 aspect-square shadow-xl" // Reduced padding and border radius
                   >
                     {/* Icon Wrapper */}
-                    <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 mb-3 md:mb-4 drop-shadow-2xl flex items-center justify-center">
+                    <div className="relative z-10 w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 drop-shadow-2xl flex items-center justify-center">
+                      {" "}
                       {Icon ? (
                         <Icon
                           size="100%"
@@ -118,12 +117,11 @@ const TechStack = () => {
                         />
                       )}
                     </div>
-
-                    <span className="text-[10px] md:text-xs font-black text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase tracking-widest text-center">
+                    <span className="text-[8px] md:text-[10px] font-black text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase tracking-widest text-center">
+                      {" "}
                       {item.name}
                     </span>
-
-                    <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 w-6 h-1 bg-slate-100 dark:bg-white/5 group-hover:bg-[#4880C9]/50 rounded-full transition-all duration-500 group-hover:w-10" />
+                    <div className="absolute bottom-2 md:bottom-3 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-slate-100 dark:bg-white/5 group-hover:bg-[#4880C9]/50 rounded-full transition-all duration-500 group-hover:w-8" />{" "}
                   </motion.div>
                 );
               })}
