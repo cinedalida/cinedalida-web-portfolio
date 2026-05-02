@@ -23,6 +23,13 @@ export const NAV_LINKS = [
   { label: "Experience", href: "#experience" },
   { label: "Tech", href: "#tech" },
   { label: "Projects", href: "#projects" },
+  { label: "Certs", href: "#certifications" },
+];
+
+export const DEFAULT_SKILL_TAGS = [
+  "Leadership",
+  "Project Management",
+  "Communication",
 ];
 
 // Tech Stack Data
@@ -308,6 +315,8 @@ export const WORK_EXPERIENCE = [
       "Implemented deduplication, logging, and API configuration features, reducing manual work and improving data accessibility.",
       "Gained experience in UI/UX, data visualization, project management, and Generative AI.",
     ],
+    tags: ["Google Apps Script", "Data Pipelines", "UI/UX", "Generative AI"],
+    image: "/logos/esk-pic.png",
     hasDemo: true,
     demoLink: "https://www.youtube.com/watch?v=bEuV2Z2dS3c",
   },
@@ -320,6 +329,8 @@ export const WORK_EXPERIENCE = [
       "Contributing to community-driven initiatives focused on empowering women in the AWS and cloud computing ecosystem.",
       "Collaborating with the Tech and Development team to support operational workflows such event presentations and technical projects.",
     ],
+    tags: ["Community Building", "Operations", "AWS", "Cloud Computing"],
+    image: "/logos/buildhers-pic.jpg",
   },
   {
     company: "Edukasyon.ph",
@@ -330,6 +341,8 @@ export const WORK_EXPERIENCE = [
       "Led the design and production of 20+ publications and digital assets for Admin and B2C campaigns using Canva, Adobe Photoshop, and Figma.",
       "Delivered visually cohesive content for initiatives including EDK Club Time, Wikasaysayan, Barirala Bites, and Women’s Month, strengthening brand identity and enhancing audience engagement across social media platforms.",
     ],
+    tags: ["Graphic Design", "Canva", "Adobe Photoshop", "Figma"],
+    image: "/logos/edk-pic.jpg",
     hasDemo: true,
     demoLink: "https://canva.link/89tgjsls7cw4ngb",
   },
@@ -342,6 +355,8 @@ export const WORK_EXPERIENCE = [
       "Completed 136+ office duty hours, supporting enrollment, registration, and general administrative transactions. ",
       "Accurately sorted and encoded 100+ student application records, contributing to efficient data management and processing for the Student Financial Aid Grant (SFAG) and Department of Labor and Employment SPES program. Recognized for delivering highly productive and reliable work.",
     ],
+    image: "/logos/dlsud-pic.jpg",
+    tags: ["Administrative Support", "Data Management", "Student Services"],
   },
 ];
 
@@ -351,10 +366,11 @@ export const INVOLVEMENT = [
     role: "Chief Executive Officer",
     period: "November 2025 - Present",
     points: [
-      "Directed council strategy, marketing, and operations for 50+ members following promotion from Vice President. ",
-      "Engineered automation prototypes using n8n and Google Gemini to accelerate social media content creation, and streamlined team coordination via Discord and Trello. ",
-      "Optimized internal workflows via Discord and Trello, improving organizational efficiency for major events like Coding Competitions, Merchandise Selling, Panimola 2025, Robotics, and Recruitment.",
+      "Directed council strategy, marketing, events and operations for 50+ members following promotion from Vice President. ",
+      "Optimized internal workflows via Discord and Trello, improving organizational efficiency for major events like Coding Competitions, Merchandise Selling, Webinars, Panimola 2025, Robotics, and Recruitment.",
     ],
+    tags: ["Leadership", "Event Management", "Operations", "Strategy"],
+    image: "/logos/cspc-pic.jpg",
   },
   {
     org: "DLSU-D Computer Science Program Council (CSPC)",
@@ -365,5 +381,99 @@ export const INVOLVEMENT = [
       "Managed social media content and created visual assets for major events including Interdepartmental Sportsfest and Codeyssey.",
       "Produced creative assets for organizational initiatives such as Back to Basics: RobotiCS 101, Codeyssey, and various holiday publications.",
     ],
+    tags: [
+      "Multimedia",
+      "Graphic Design",
+      "Social Media",
+      "Creative Direction",
+    ],
+    image: "/logos/cspc-pic.jpg",
+  },
+];
+
+export const CERTIFICATIONS_DATA = [
+  {
+    id: 1,
+    name: "TOEIC (Score: 810/990)",
+    meta: "Proficiency Exam",
+    desc: "International English communication certification",
+    iconType: "shield",
+  },
+  {
+    id: 2,
+    name: "DOST - Hack4AProgress",
+    meta: "Top 8 Finalist",
+    desc: "Out of 23 regional teams",
+    iconType: "award",
+  },
+  {
+    id: 3,
+    name: "Fresh START Hackathon",
+    meta: "Sustainable Tech",
+    desc: "Renewable Technology Innovation Participant",
+    iconType: "external",
+  },
+  {
+    id: 4,
+    name: "Intro to SQL & Dockerization",
+    meta: "DataCamp",
+    desc: "Technical certification in backend data management",
+    iconType: "star",
+  },
+  {
+    id: 5,
+    name: "Data Analytics Essentials",
+    meta: "CISCO",
+    desc: "Foundational data analysis and visualization",
+    iconType: "shield",
+  },
+  {
+    id: 6,
+    name: "Python & JS Essentials 1",
+    meta: "CISCO",
+    desc: "Core programming fundamentals",
+    iconType: "award",
+  },
+  {
+    id: 7,
+    name: "Responsive Web Design",
+    meta: "freeCodeCamp",
+    desc: "300-hour web development certification",
+    iconType: "external",
+  },
+  {
+    id: 8,
+    name: "EDSP Scholarship Grant",
+    meta: "OWWA",
+    desc: "Education for Development Scholarship Program",
+    iconType: "star",
+  },
+  {
+    id: 9,
+    name: "DataCamp Scholarship",
+    meta: "DEP",
+    desc: "Data Engineering Pilipinas Initiative",
+    iconType: "shield",
+  },
+  {
+    id: 10,
+    name: "Student Financial Aid Grant",
+    meta: "SFAG",
+    desc: "Academic financial support awardee",
+    iconType: "award",
+  },
+  {
+    id: 11,
+    name: "DOLE SPES Scholarship",
+    meta: "Government Grant",
+    desc: "Special Program for Employment of Students",
+    iconType: "star",
+  },
+  {
+    id: 12,
+    name: "AWS BuildHERs+ Mentorship",
+    meta: "AWS Initiative",
+    desc: "Cloud computing and professional mentorship",
+    iconType: "external",
   },
 ];
